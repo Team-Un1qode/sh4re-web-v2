@@ -15,11 +15,14 @@ const Login = () => {
           <S.InputContainer>
             <S.InputBox>
               <S.InputIcon src='/login-user-icon.svg'></S.InputIcon>
-              <S.Input placeholder='이메일주소를 입력하세요.'></S.Input>
+              <S.Input placeholder='아이디를 입력하세요.'></S.Input>
             </S.InputBox>
             <S.InputBox>
               <S.InputIcon src='/login-password-icon.svg'></S.InputIcon>
-              <S.Input placeholder='비밀번호를 입력하세요.'></S.Input>
+              <S.Input
+                placeholder='비밀번호를 입력하세요.'
+                type='password'
+              ></S.Input>
             </S.InputBox>
           </S.InputContainer>
           <S.LoginButton>로그인</S.LoginButton>
