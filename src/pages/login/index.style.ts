@@ -10,14 +10,13 @@ export const Container = styled.div`
 
 export const BackgroundWrapper = styled.div`
   display: flex;
-  flex: 1;
   justify-content: stretch;
   align-items: stretch;
-  width: 60vw;
+  flex: 1;
   height: 100%;
   box-sizing: border-box;
   border-radius: 20px;
-  padding: 15px 0 15px 15px;
+  padding: 20px 0 20px 20px;
   @media screen and (max-width: 1024px) {
     display: none;
   }
@@ -37,10 +36,12 @@ export const LoginContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 500px;
+  width: 400px;
   height: 100%;
-  box-sizing: border-box;
-  padding: 0 50px;
+  padding: 0 150px;
+  @media screen and (max-width: 768px) {
+    padding: 0 50px;
+  }
 `;
 
 export const LoginBox = styled.form`
