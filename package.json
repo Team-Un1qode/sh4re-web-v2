@@ -14,15 +14,10 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.56.4",
-<<<<<<< Updated upstream
     "react-router-dom": "^7.6.0",
-    "styled-components": "^6.1.18",
-    "typescript": "~5.8.3"
-=======
-    "react-router-dom": "^7.6.1",
+    "typescript": "~5.8.3",
     "styled-components": "^6.1.18",
     "zustand": "^5.0.5"
->>>>>>> Stashed changes
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
