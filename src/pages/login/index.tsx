@@ -1,10 +1,7 @@
-import * as S from "./index.style.ts";
+import * as S from "./style.ts";
 import { useForm } from "react-hook-form";
-
-type LoginFormInputs = {
-  username: string;
-  password: string;
-};
+import type { LoginFormInputs } from "../../types/auth/login.ts";
+import useLogin from "../../hooks/auth/useLogin.ts";
 
 const Login = () => {
   const {
@@ -12,9 +9,10 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<LoginFormInputs>();
+  const { submit } = useLogin();
 
-  const onSubmit = (data: LoginFormInputs) => {
-    console.log(data);
+  const onSubmit = async (data: LoginFormInputs) => {
+    await submit(data);
   };
 
   return (
