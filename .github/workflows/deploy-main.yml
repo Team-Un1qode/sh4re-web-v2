@@ -28,6 +28,9 @@ jobs:
               spa: true
               buildenv: []
               rewrites: []
+              args:
+                - name: VITE_SERVER_URL
+                  value: ${{ secrets.VITE_SERVER_URL }}
             context:
               git:
                 url: git@github.com:${{ github.repository }}.git
