@@ -1,11 +1,7 @@
-import Login from "./pages/login";
+import Router from "./Router";
 
 function App() {
-  return (
-    <div>
-      <Login />
-    </div>
-  );
+  return <Router />;
 }
 
 export default App;
