@@ -27,7 +27,7 @@ jobs:
               nodeversion: "22"
               spa: true
               buildenv:
-                - name: VITE_SERVER_URL
+              - name: VITE_SERVER_URL
                 value: ${{ secrets.VITE_SERVER_URL }}
             context:
               git:
