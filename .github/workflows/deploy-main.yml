@@ -28,7 +28,7 @@ jobs:
               spa: true
               buildenv: []
               rewrites: []
-              env:
+              args:
                 - name: VITE_SERVER_URL
                   value: ${{ secrets.VITE_SERVER_URL }}
             context:
