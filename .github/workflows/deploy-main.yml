@@ -26,11 +26,10 @@ jobs:
             options:
               nodeversion: "22"
               spa: true
-              buildenv: []
               rewrites: []
-              args:
-                - name: VITE_SERVER_URL
-                  value: ${{ secrets.VITE_SERVER_URL }}
+              buildenv:
+                - name: test
+                  value: test
             context:
               git:
                 url: git@github.com:${{ github.repository }}.git
