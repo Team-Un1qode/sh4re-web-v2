@@ -1,0 +1,46 @@
+import styled from "styled-components";
+import { COLOR } from "../../../style/color/color";
+
+export const Container = styled.div`
+    width: 18rem;
+    height: 100vh;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.02);
+    background-color: ${COLOR.white};
+`;
+
+export const Logo = styled.img`
+    width: 6rem;
+`;
+// 리스트 전체
+export const List = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+`;
+// 리스트 각각 요소
+export const Elem = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    color: ${COLOR.black};
+    background-color: ${COLOR.gray};
+    cursor: pointer;
+    gap: 1.5rem;
+    border-radius: 0.25rem;
+`;
+
+export const Icon = styled.img`
+    width: 1.5rem;
+    height: 1.25rem;
+    padding-left: 1rem;
+`;
+
+export const ElemText = styled.div`
+    font-size: 1.25rem;
+    font-weight: 600;
+`;

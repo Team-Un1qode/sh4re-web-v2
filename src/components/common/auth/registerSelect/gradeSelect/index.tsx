@@ -11,7 +11,7 @@ const options = [
   { value: "3", label: "3학년" },
 ];
 
-function GradeSelect({ value, onChange }: GradeSelectProps) {
+const GradeSelect = ({ value, onChange }: GradeSelectProps) => {
   return (
     <select value={value} onChange={onChange}>
       <option value=''>학년</option>
