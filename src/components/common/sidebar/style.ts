@@ -4,12 +4,21 @@ import { COLOR } from "../../../style/color/color";
 export const Container = styled.div`
     width: 18rem;
     height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.02);
+    background-color: ${COLOR.white};
+`;
+
+export const Content = styled.div`
     padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.02);
-    background-color: ${COLOR.white};
 `;
 
 export const Logo = styled.img`
@@ -43,4 +52,16 @@ export const Icon = styled.img`
 export const ElemText = styled.div`
     font-size: 1.25rem;
     font-weight: 600;
+`;
+
+export const Profile = styled(ElemText)`
+    padding: 2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    gap: 1.5rem;
+`;
+
+export const ProfileIcon = styled.img`
+    width: 1.75rem;
 `;
