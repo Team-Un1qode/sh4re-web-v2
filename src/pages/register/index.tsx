@@ -5,6 +5,7 @@ import useSignUp from "../../hooks/auth/useRegister.ts";
 import type { RegisterFormInputs } from "../../types/auth/register.ts";
 import GradeSelect from "../../components/common/auth/registerSelect/gradeSelect/index.tsx";
 import ClassSelect from "../../components/common/auth/registerSelect/classSelect/index.tsx";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [grade, setGrade] = useState("");
@@ -106,9 +107,14 @@ const Register = () => {
             </S.SmallInputBox>
           </S.InputContainer>
           <S.RegisterButton>회원가입</S.RegisterButton>
-          <S.ForgetPasswordContainer>
-            <S.ForgetPassword>계정이 있으신가요?</S.ForgetPassword>
-          </S.ForgetPasswordContainer>
+          <S.AccountPromptContainer>
+            <S.AccountPrompt>
+              계정이 있으신가요?
+              <span>
+                <Link to='/login'>로그인</Link>
+              </span>
+            </S.AccountPrompt>
+          </S.AccountPromptContainer>
         </S.RegisterBox>
       </S.RegisterContainer>
     </S.Container>

@@ -2,6 +2,7 @@ import * as S from "./style.ts";
 import { useForm } from "react-hook-form";
 import type { LoginFormInputs } from "../../types/auth/login.ts";
 import useLogin from "../../hooks/auth/useLogin.ts";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const {
@@ -62,9 +63,17 @@ const Login = () => {
             )}
           </S.InputContainer>
           <S.LoginButton>로그인</S.LoginButton>
-          <S.ForgetPasswordContainer>
-            <S.ForgetPassword>비밀번호를 잊어버리셨나요?</S.ForgetPassword>
-          </S.ForgetPasswordContainer>
+          <S.AuthBottomContainer>
+            <S.AccountPrompt>
+              아직 계정이 없으신가요?
+              <span>
+                <Link to='/register'>회원가입</Link>
+              </span>
+            </S.AccountPrompt>
+            <S.ForgotPasswordLink href='/forgot-password'>
+              비밀번호를 잊어버리셨나요?
+            </S.ForgotPasswordLink>
+          </S.AuthBottomContainer>
         </S.LoginBox>
       </S.LoginContainer>
     </S.Container>
