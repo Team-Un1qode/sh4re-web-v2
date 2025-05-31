@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { COLOR } from "../../style/color/color";
 
 export const Container = styled.div`
   display: flex;
@@ -126,17 +127,33 @@ export const LoginButton = styled.button`
   user-select: none;
 `;
 
-export const ForgetPasswordContainer = styled.div`
+export const AuthBottomContainer = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  user-select: none;
+  gap: 14px;
+  margin-top: 12px;
 `;
 
-export const ForgetPassword = styled.a`
+export const AccountPrompt = styled.div`
   font-size: 0.8rem;
-  color: #5d5d5d;
+  color: ${COLOR.grey};
+  user-select: none;
+  span {
+    margin-left: 4px;
+    a {
+      color: ${COLOR.main};
+      text-decoration: underline;
+      font-weight: 500;
+    }
+  }
+`;
+
+export const ForgotPasswordLink = styled.a`
+  font-size: 0.8rem;
+  color: ${COLOR.grey};
   cursor: pointer;
   user-select: none;
 `;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { COLOR } from "../../style/color/color";
 
 export const Container = styled.div`
   display: flex;
@@ -121,6 +122,8 @@ export const Input = styled.input`
 `;
 
 export const SmallInput = styled.input`
+  flex: 1;
+  height: 50px;
   width: 100%;
   height: 50px;
   border: 1px solid #b3b3b3;
@@ -140,6 +143,8 @@ export const SmallInput = styled.input`
 `;
 
 export const Select = styled.select`
+  flex: 1;
+  height: 50px;
   width: 100%;
   height: 50px;
   border: 1px solid #b3b3b3;
@@ -171,7 +176,7 @@ export const RegisterButton = styled.button`
   user-select: none;
 `;
 
-export const ForgetPasswordContainer = styled.div`
+export const AccountPromptContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -179,9 +184,16 @@ export const ForgetPasswordContainer = styled.div`
   user-select: none;
 `;
 
-export const ForgetPassword = styled.a`
+export const AccountPrompt = styled.div`
   font-size: 0.8rem;
-  color: #5d5d5d;
-  cursor: pointer;
+  color: ${COLOR.grey};
   user-select: none;
+  span {
+    margin-left: 4px;
+    a {
+      color: ${COLOR.main};
+      text-decoration: underline;
+      font-weight: 500;
+    }
+  }
 `;
