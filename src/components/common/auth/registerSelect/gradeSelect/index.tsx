@@ -1,4 +1,5 @@
 import React from "react";
+import * as S from "../../../../../pages/register/style";
 
 interface GradeSelectProps {
   value: string;
@@ -13,15 +14,15 @@ const options = [
 
 const GradeSelect = ({ value, onChange }: GradeSelectProps) => {
   return (
-    <select value={value} onChange={onChange}>
+    <S.Select value={value} onChange={onChange}>
       <option value=''>학년</option>
       {options.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}
         </option>
       ))}
-    </select>
+    </S.Select>
   );
-}
+};
 
 export default GradeSelect;

@@ -81,6 +81,13 @@ const Register = () => {
                 })}
               />
             </S.InputBox>
+            {errors.schoolCode && (
+              <span
+                style={{ color: "red", fontSize: "0.85rem", marginLeft: "5px" }}
+              >
+                {errors.schoolCode.message}
+              </span>
+            )}
             <S.SmallInputBox>
               <GradeSelect
                 value={grade}

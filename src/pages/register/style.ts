@@ -121,6 +121,8 @@ export const Input = styled.input`
 `;
 
 export const SmallInput = styled.input`
+  flex: 1;
+  height: 50px;
   width: 100%;
   height: 50px;
   border: 1px solid #b3b3b3;
@@ -140,6 +142,8 @@ export const SmallInput = styled.input`
 `;
 
 export const Select = styled.select`
+  flex: 1;
+  height: 50px;
   width: 100%;
   height: 50px;
   border: 1px solid #b3b3b3;
