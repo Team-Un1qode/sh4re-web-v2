@@ -1,6 +1,6 @@
 export interface ContentBoxProps {
     period: string;
     title: string;
-    status: string;
+    status: "누락됨" | "할당됨" | "제출됨";
     link: string;
 }

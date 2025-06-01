@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { COLOR } from "../../../../style/color/color";
 
 export const Container = styled.div`
+    padding: 3rem 2.5rem;
     width: 90%;
     height: 2rem;
 `;
@@ -26,7 +27,7 @@ export const Icon = styled.img`
 `;
 
 export const DetailWrap = styled(TitleWrap)`
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: ${COLOR.dark};
     gap: 1rem;

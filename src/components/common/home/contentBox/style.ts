@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { COLOR } from "../../../../style/color/color";
+import type { StatusType } from "../../../../types/home/StatusType";
 
 export const Container = styled.div`
     width: 90%;
@@ -7,6 +8,9 @@ export const Container = styled.div`
     background-color: white;
     border-bottom: 0.1rem solid ${COLOR.gray};
     display: flex;
+    justify-content: space-between;
+    padding:0.25rem;
+    cursor: pointer;
 `;
 
 export const TitleWrap = styled.div`
@@ -17,9 +21,23 @@ export const TitleWrap = styled.div`
     align-items: center;
 `;
 
-export const Status = styled.div``;
+export const Status = styled.div<StatusType>`
+    font-weight: bold;
+    color: ${({ status }) =>
+        status === "누락됨"
+            ? COLOR.red
+            : status === "할당됨"
+            ? COLOR.main
+            : status === "제출됨"
+            ? COLOR.green
+            : "black"};
+`;
 
 export const Period = styled.div`
     font-size: 0.75rem;
     color: ${COLOR.dark};
+`;
+
+export const Icon = styled.img`
+    width: 0.75rem;
 `;
