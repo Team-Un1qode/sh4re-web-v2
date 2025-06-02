@@ -7,9 +7,23 @@ body {
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
-
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1440px) {
   :root {
     font-size: 80%;
+  }
+}
+@media screen and (max-width: 1280px) {
+  :root {
+    font-size: 70%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  :root {
+    font-size: 60%;
+  }
+}
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 50%;
   }
 }
