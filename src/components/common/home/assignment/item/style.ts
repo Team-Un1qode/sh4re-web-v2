@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { COLOR } from "../../../../../style/color/color.ts";
-import type { StatusType } from "../../../../../types/home/StatusType.ts";
+
+export interface StatusType {
+  status: "누락됨" | "할당됨" | "제출됨";
+}
 
 export const Container = styled.div`
   width: 90%;

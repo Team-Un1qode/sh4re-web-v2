@@ -1,7 +1,12 @@
-import type { AnnouncementBarProps } from "../../../../../types/home/AnnouncementBarProps.ts";
 import DetailBar from "../../detailbar/index.tsx";
 import * as S from "./style.ts";
 import AnnouncementItem from "../item/index.tsx";
+
+export interface AnnouncementBarProps {
+  title: string;
+  icon: string;
+  link: string;
+}
 
 const AnnouncementSection = ({ title, icon, link }: AnnouncementBarProps) => {
   return (

@@ -1,6 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import type { ContentBoxProps } from "../../../../../types/home/ContentBoxProps.ts";
 import * as S from "./style.ts";
+
+export interface ContentBoxProps {
+  period: string;
+  title: string;
+  status: "누락됨" | "할당됨" | "제출됨";
+  link: string;
+}
 
 const AssignmentItem = ({ status, title, period, link }: ContentBoxProps) => {
   const navigate = useNavigate();

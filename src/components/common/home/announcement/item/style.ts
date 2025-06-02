@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { COLOR } from "../../../../../style/color/color.ts";
-import type { AnnouncementStatusType } from "../../../../../types/home/AnnouncementStatusType.ts";
+
+export interface AnnouncementStatusType {
+  status: "과제" | "공지";
+}
 
 export const Container = styled.div`
   display: flex;

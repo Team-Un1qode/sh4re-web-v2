@@ -1,6 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import type { AnnouncementProps } from "../../../../../types/home/AnnouncementProps.ts";
 import * as S from "./style.ts";
+
+export interface AnnouncementProps {
+  period: string;
+  title: string;
+  status: "과제" | "공지";
+  link: string;
+  name: string;
+}
 
 const AnnouncementItem = ({
   status,
