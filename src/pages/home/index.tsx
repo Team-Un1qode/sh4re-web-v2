@@ -13,7 +13,7 @@ const Home = () => {
           title='공지사항'
           link={""}
         />
-        <HandOutsSection icon='/task.svg' title='수업 자료' link={""} />
+        <HandOutsSection icon='/class.svg' title='수업 자료' link={""} />
       </S.ContentWrap>
     </S.Container>
   );

@@ -27,7 +27,6 @@ export const TitleWrap = styled.div`
 `;
 
 export const Status = styled.div`
-  font-weight: bold;
   display: flex;
   align-items: center;
 `;
