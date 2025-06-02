@@ -76,6 +76,48 @@ const HandOutsSection = ({ title, icon, link }: HandOutsBarProps) => {
           link=''
           name='채근영'
         />
+        <HandOutsItem
+            status='pptx'
+            title='정보 수업 첫 강의.pptx'
+            period='2025.05.18'
+            link=''
+            name='김은찬'
+        />
+        <HandOutsItem
+            status='pdf'
+            title='알고리즘 개념 총정리.pdf'
+            period='2025.05.17'
+            link=''
+            name='오용준'
+        />
+        <HandOutsItem
+            status='py'
+            title='list_comprehension.py'
+            period='2025.05.16'
+            link=''
+            name='채근영'
+        />
+        <HandOutsItem
+            status='pptx'
+            title='정보 수업 첫 강의.pptx'
+            period='2025.05.18'
+            link=''
+            name='김은찬'
+        />
+        <HandOutsItem
+            status='pdf'
+            title='알고리즘 개념 총정리.pdf'
+            period='2025.05.17'
+            link=''
+            name='오용준'
+        />
+        <HandOutsItem
+            status='py'
+            title='list_comprehension.py'
+            period='2025.05.16'
+            link=''
+            name='채근영'
+        />
       </S.HandOutsList>
     </S.Container>
   );

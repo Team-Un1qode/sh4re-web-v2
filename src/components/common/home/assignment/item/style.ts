@@ -7,7 +7,7 @@ export interface StatusType {
 
 export const Container = styled.div`
   width: 90%;
-  height: 4rem;
+  min-height: 4rem;
   background-color: white;
   border-bottom: 0.1rem solid ${COLOR.gray};
   display: flex;

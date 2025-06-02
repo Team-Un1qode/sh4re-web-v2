@@ -9,10 +9,9 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   width: 90%;
-  height: 4rem;
+  min-height: 4rem;
   background-color: white;
   border-bottom: 0.1rem solid ${COLOR.gray};
-  display: flex;
   justify-content: space-between;
   padding: 0.25rem;
   box-sizing: border-box;

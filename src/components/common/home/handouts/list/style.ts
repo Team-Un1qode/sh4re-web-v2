@@ -9,6 +9,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 0.25rem;
+  overflow: hidden;
   &:first-child {
     grid-row: 1 / span 2;
   }
@@ -16,7 +17,9 @@ export const Container = styled.div`
 
 export const HandOutsList = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow: auto;
 `;
