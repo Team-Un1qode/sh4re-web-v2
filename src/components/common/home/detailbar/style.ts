@@ -17,8 +17,8 @@ export const ContentWrap = styled.div`
 export const TitleWrap = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 2rem;
+  gap: 0.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: ${COLOR.black};
 `;
@@ -31,7 +31,7 @@ export const DetailWrap = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: ${COLOR.dark};
   cursor: pointer;
@@ -39,5 +39,5 @@ export const DetailWrap = styled.div`
 `;
 
 export const DetailIcon = styled.img`
-  height: 1.25rem;
+  height: 1.2rem;
 `;

@@ -6,20 +6,28 @@ body {
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
+:root {
+  font-size: 90%;
+}
 
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 1440px) and (max-width: 1600px) {
   :root {
     font-size: 80%;
   }
 }
-@media screen and (max-width: 1280px) {
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
   :root {
-    font-size: 70%;
+    font-size: 65%;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
   :root {
     font-size: 60%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  :root {
+    font-size: 55%;
   }
 }
 @media screen and (max-width: 768px) {
