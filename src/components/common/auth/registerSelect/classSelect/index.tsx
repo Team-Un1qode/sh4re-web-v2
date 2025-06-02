@@ -1,4 +1,5 @@
 import React from "react";
+import * as S from "../../../../../pages/register/style";
 
 interface ClassSelectProps {
   value: string;
@@ -12,15 +13,15 @@ const options = Array.from({ length: 14 }, (_, i) => ({
 
 const ClassSelect = ({ value, onChange }: ClassSelectProps) => {
   return (
-    <select value={value} onChange={onChange}>
+    <S.Select value={value} onChange={onChange}>
       <option value=''>반</option>
       {options.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}
         </option>
       ))}
-    </select>
+    </S.Select>
   );
-}
+};
 
 export default ClassSelect;
