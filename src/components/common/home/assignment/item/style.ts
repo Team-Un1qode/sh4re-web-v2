@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { COLOR } from "../../../../style/color/color";
-import type { StatusType } from "../../../../types/home/StatusType";
+import { COLOR } from "../../../../../style/color/color.ts";
+import type { StatusType } from "../../../../../types/home/StatusType.ts";
 
 export const Container = styled.div`
     width: 90%;

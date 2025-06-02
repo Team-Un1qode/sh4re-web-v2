@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import type { ContentBoxProps } from "../../../../types/home/ContentBoxProps";
-import * as S from "./style";
+import type { ContentBoxProps } from "../../../../../types/home/ContentBoxProps.ts";
+import * as S from "./style.ts";
 
-const ContentBox = ({ status, title, period, link }: ContentBoxProps) => {
+const AssignmentItem = ({ status, title, period, link }: ContentBoxProps) => {
     const navigate = useNavigate();
     return (
         <S.Container onClick={() => navigate(link)}>
@@ -16,4 +16,4 @@ const ContentBox = ({ status, title, period, link }: ContentBoxProps) => {
     );
 };
 
-export default ContentBox;
+export default AssignmentItem;

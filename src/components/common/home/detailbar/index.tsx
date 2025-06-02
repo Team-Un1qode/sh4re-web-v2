@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import type { DetailbarProps } from "../../../../types/home/DetailbarProps";
 import * as S from "./style";
 
-const Detailbar = ({ title, icon, link }: DetailbarProps) => {
+const DetailBar = ({ title, icon, link }: DetailbarProps) => {
     const navigate = useNavigate();
     return (
         <S.Container>
@@ -20,4 +20,4 @@ const Detailbar = ({ title, icon, link }: DetailbarProps) => {
     );
 };
 
-export default Detailbar;
+export default DetailBar;

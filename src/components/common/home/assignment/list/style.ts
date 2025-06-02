@@ -9,9 +9,12 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     border-radius: 0.25rem;
+    &:first-child {
+        grid-row: 1 / span 2;
+    }
 `;
 
-export const ContentWrap = styled.div`
+export const AssignmentList = styled.div`
     width:100%;
     display:flex;
     align-items: center;

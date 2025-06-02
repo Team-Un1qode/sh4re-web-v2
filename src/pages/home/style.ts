@@ -8,12 +8,16 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     background-color: ${COLOR.background};
-    padding: 2rem 4rem;
+    padding: 4rem;
     overflow: hidden;
-     box-sizing: border-box;
+    box-sizing: border-box;
 `;
 
 export const ContentWrap = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 2.5fr;
+    gap: 34px;
     width: 100%;
     height: 100%;
 `;

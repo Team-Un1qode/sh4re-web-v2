@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { COLOR } from "../../../../style/color/color";
 
 export const Container = styled.div`
-    padding: 3rem 2.5rem;
+    box-sizing: border-box;
     width: 90%;
     height: 2rem;
 `;
@@ -23,7 +23,7 @@ export const TitleWrap = styled.div`
 `;
 
 export const Icon = styled.img`
-    width: 2rem;
+    height: 100%;
 `;
 
 export const DetailWrap = styled(TitleWrap)`
