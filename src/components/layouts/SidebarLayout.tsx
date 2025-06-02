@@ -2,9 +2,9 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "../common/sidebar/index";
 
 const SidebarLayout = () => (
-    <div style={{ display: "flex", minHeight: "100vh" }}>
+    <div style={{ display: "flex" }}>
         <Sidebar />
-        <main style={{ flex: 1, paddingLeft: "18rem" }}>
+        <main style={{ flex: 1, paddingLeft: "18rem", height: "100vh" }}>
             <Outlet />
         </main>
     </div>
