@@ -11,14 +11,14 @@ export interface HandOutsProps {
 
 const getFileIcon = (status: string) =>
   status === "pptx"
-    ? "/src/assets/home/pptx.svg"
+    ? "/assets/home/pptx.svg"
     : status === "hwp"
-    ? "/src/assets/home/hwp.svg"
+    ? "/assets/home/hwp.svg"
     : status === "pdf"
-    ? "/src/assets/home/pdf.svg"
+    ? "/assets/home/pdf.svg"
     : status === "py"
-    ? "/src/assets/home/py.svg"
-    : "/src/assets/home/etc.svg";
+    ? "/assets/home/py.svg"
+    : "/assets/home/etc.svg";
 
 const HandOutsItem = ({ status, title, period, link, name }: HandOutsProps) => {
   const navigate = useNavigate();
