@@ -35,7 +35,7 @@ export const Status = styled.div<StatusType>`
 `;
 
 export const Period = styled.div`
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: ${COLOR.dark};
 `;
 
