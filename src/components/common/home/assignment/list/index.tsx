@@ -4,25 +4,31 @@ import * as S from "./style.ts";
 import AssignmentItem from "../item";
 
 const AssignmentSection = ({ title, icon, link }: DetailbarProps) => {
-    return (
-        <S.Container>
-            <DetailBar title={title} icon={icon} link={link} />
-            <S.AssignmentList>
-                <AssignmentItem
-                    status="누락됨"
-                    title="[파일입출력] 체크리스트 만들기"
-                    period="2025.05.16"
-                    link=""
-                />
-                <AssignmentItem
-                    status="누락됨"
-                    title="[파일입출력] 체크리스트 만들기"
-                    period="2025.05.16"
-                    link=""
-                />
-            </S.AssignmentList>
-        </S.Container>
-    );
+  return (
+    <S.Container>
+      <DetailBar title={title} icon={icon} link={link} />
+      <S.AssignmentList>
+        <AssignmentItem
+          status='누락됨'
+          title='[파일입출력] 체크리스트 만들기'
+          period='2025.05.16'
+          link=''
+        />
+        <AssignmentItem
+          status='제출됨'
+          title='[파일입출력] 체크리스트 만들기 2'
+          period='2025.05.19'
+          link=''
+        />
+        <AssignmentItem
+          status='할당됨'
+          title='[파일입출력] 체크리스트 만들기 2'
+          period='2025.05.19'
+          link=''
+        />
+      </S.AssignmentList>
+    </S.Container>
+  );
 };
 
 export default AssignmentSection;
