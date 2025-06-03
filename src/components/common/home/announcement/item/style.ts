@@ -11,7 +11,6 @@ export const Container = styled.div`
   height: 4rem;
   background-color: ${({ theme }) => theme.color.gray};
   border-bottom: 0.1rem solid ${({ theme }) => theme.color.gray};
-  display: flex;
   justify-content: space-between;
   padding: 0.25rem;
   box-sizing: border-box;

@@ -8,6 +8,7 @@ export const Container = styled.div`
   box-shadow: 0px 3px 24px 0px ${({ theme }) => theme.color.gray};
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   border-radius: 0.25rem;
   &:first-child {
     grid-row: 1 / span 2;

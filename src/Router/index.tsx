@@ -3,7 +3,6 @@ import Login from "../pages/login";
 import Register from "../pages/register";
 import Home from "../pages/home";
 import SidebarLayout from "../components/layouts/SidebarLayout";
-import Announcement from "../pages/announcement";
 
 const Router = () => {
   return (
@@ -13,7 +12,6 @@ const Router = () => {
         <Route path='/register' element={<Register />} />
         <Route element={<SidebarLayout />}>
           <Route path='/' element={<Home />} />
-          <Route path='/announcement' element={<Announcement />} />
         </Route>
       </Routes>
     </BrowserRouter>
