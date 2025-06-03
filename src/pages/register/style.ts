@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { COLOR } from "../../style/color/color";
 
 export const Container = styled.div`
   display: flex;
@@ -62,14 +61,14 @@ export const Header = styled.div`
 
 export const RegisterTitle = styled.p`
   font-size: 1.7rem;
-  color: #303841;
+  color: ${({ theme }) => theme.color.dark};
   font-weight: 500;
   user-select: none;
 `;
 
 export const RegisterSubTitle = styled.p`
   font-size: 1rem;
-  color: rgba(0, 0, 0, 0.5);
+  color: ${({ theme }) => theme.color.black};
   font-weight: 400;
   user-select: none;
 `;
@@ -105,19 +104,19 @@ export const InputIcon = styled.img`
 export const Input = styled.input`
   width: 100%;
   height: 50px;
-  border: 1px solid #b3b3b3;
+  border: 1px solid ${({ theme }) => theme.color.grey};
   box-sizing: border-box;
   font-weight: 350;
   padding: 0 0 0 40px;
   border-radius: 10px;
-  border-color: #b3b3b3;
-  color: #303841;
+  border-color: ${({ theme }) => theme.color.grey};
+  color: ${({ theme }) => theme.color.dark};
   user-select: none;
   &::placeholder {
-    color: #b3b3b3;
+    color: ${({ theme }) => theme.color.grey};
   }
   &:focus {
-    outline: 1px solid #2185d5;
+    outline: 1px solid ${({ theme }) => theme.color.main};
   }
 `;
 
@@ -126,19 +125,19 @@ export const SmallInput = styled.input`
   height: 50px;
   width: 100%;
   height: 50px;
-  border: 1px solid #b3b3b3;
+  border: 1px solid ${({ theme }) => theme.color.grey};
   box-sizing: border-box;
   font-weight: 350;
   padding: 0 0 0 20px;
   border-radius: 10px;
-  border-color: #b3b3b3;
-  color: #303841;
+  border-color: ${({ theme }) => theme.color.grey};
+  color: ${({ theme }) => theme.color.dark};
   user-select: none;
   &::placeholder {
-    color: #b3b3b3;
+    color: ${({ theme }) => theme.color.grey};
   }
   &:focus {
-    outline: 1px solid #2185d5;
+    outline: 1px solid ${({ theme }) => theme.color.main};
   }
 `;
 
@@ -147,19 +146,19 @@ export const Select = styled.select`
   height: 50px;
   width: 100%;
   height: 50px;
-  border: 1px solid #b3b3b3;
+  border: 1px solid ${({ theme }) => theme.color.grey};
   box-sizing: border-box;
   font-weight: 350;
   padding: 0 0 0 20px;
   border-radius: 10px;
-  border-color: #b3b3b3;
-  color: #303841;
+  border-color: ${({ theme }) => theme.color.grey};
+  color: ${({ theme }) => theme.color.dark};
   user-select: none;
   &::placeholder {
-    color: #b3b3b3;
+    color: ${({ theme }) => theme.color.grey};
   }
   &:focus {
-    outline: 1px solid #2185d5;
+    outline: 1px solid ${({ theme }) => theme.color.main};
   }
 `;
 
@@ -168,7 +167,7 @@ export const RegisterButton = styled.button`
   height: 50px;
   box-sizing: border-box;
   border-radius: 10px;
-  background-color: #303841;
+  background-color: ${({ theme }) => theme.color.dark};
   color: white;
   font-size: 1rem;
   font-weight: 600;
@@ -186,12 +185,12 @@ export const AccountPromptContainer = styled.div`
 
 export const AccountPrompt = styled.div`
   font-size: 0.8rem;
-  color: ${COLOR.grey};
+  color: ${({ theme }) => theme.color.grey};
   user-select: none;
   span {
     margin-left: 4px;
     a {
-      color: ${COLOR.main};
+      color: ${({ theme }) => theme.color.main};
       text-decoration: underline;
       font-weight: 500;
     }

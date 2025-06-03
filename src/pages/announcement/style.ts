@@ -1,11 +1,5 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  background: ${({ theme }) => theme.color.background};
-  color: ${({ theme }) => theme.color.main};
-  min-height: 100vh;
-`;
-
 export const Container = styled.div`
   width: 100%;
   height: 100%;

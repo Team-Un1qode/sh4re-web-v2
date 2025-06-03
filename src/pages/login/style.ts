@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { COLOR } from "../../style/color/color";
 
 export const Container = styled.div`
   display: flex;
@@ -139,12 +138,12 @@ export const AuthBottomContainer = styled.div`
 
 export const AccountPrompt = styled.div`
   font-size: 0.8rem;
-  color: ${COLOR.grey};
+  color: ${({ theme }) => theme.color.main};
   user-select: none;
   span {
     margin-left: 4px;
     a {
-      color: ${COLOR.main};
+      color: ${({ theme }) => theme.color.main};
       text-decoration: underline;
       font-weight: 500;
     }
@@ -153,7 +152,7 @@ export const AccountPrompt = styled.div`
 
 export const ForgotPasswordLink = styled.a`
   font-size: 0.8rem;
-  color: ${COLOR.grey};
+  color: ${({ theme }) => theme.color.grey};
   cursor: pointer;
   user-select: none;
 `;
