@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: ${({ theme }) => theme.color.gray};
+  background-color: ${({ theme }) => theme.color.white};
   box-shadow: 0px 3px 24px 0px ${({ theme }) => theme.color.grey};
   border-radius: 0.25rem;
   overflow: hidden;

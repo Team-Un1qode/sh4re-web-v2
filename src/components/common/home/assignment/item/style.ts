@@ -9,7 +9,7 @@ export const Container = styled.div`
   justify-content: space-between;
   width: 90%;
   min-height: 4rem;
-  background-color: ${({ theme }) => theme.color.gray};
+  background-color: ${({ theme }) => theme.color.white};
   border-bottom: 0.1rem solid ${({ theme }) => theme.color.gray};
   padding: 0.25rem;
   box-sizing: border-box;

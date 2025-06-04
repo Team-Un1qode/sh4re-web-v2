@@ -61,6 +61,7 @@ export const Profile = styled(ElemText)`
   align-items: center;
   font-size: 1.5rem;
   gap: 1.5rem;
+  color: ${({ theme }) => theme.color.black};
 `;
 
 export const ProfileIcon = styled.img`
