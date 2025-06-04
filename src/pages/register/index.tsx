@@ -1,7 +1,7 @@
 import * as S from "./style.ts";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import useSignUp from "../../hooks/auth/useRegister.ts";
+import useRegister from "../../hooks/auth/useRegister.ts";
 import type { RegisterFormInputs } from "../../types/auth/register.ts";
 import GradeSelect from "../../components/common/auth/registerSelect/gradeSelect/index.tsx";
 import ClassSelect from "../../components/common/auth/registerSelect/classSelect/index.tsx";
@@ -16,7 +16,7 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<RegisterFormInputs>();
-  const { submit } = useSignUp();
+  const { submit } = useRegister();
 
   const onSubmit = async (data: RegisterFormInputs) => {
     await submit({
