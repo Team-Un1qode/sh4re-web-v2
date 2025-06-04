@@ -34,6 +34,13 @@ const AnnouncementSection = ({ title, icon, link }: AnnouncementBarProps) => {
           link=''
           name='김성한'
         />
+        <AnnouncementItem
+          status='과제'
+          title='[파일입출력] 체크리스트 만들기 2'
+          period='2025.05.19'
+          link=''
+          name='김성한'
+        />
       </S.AssignmentList>
     </S.Container>
   );
