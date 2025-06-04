@@ -7,7 +7,7 @@ const light = {
     black: "#222222",
     gray: "#F3F3F3",
     grey: "#e0e0e0",
-    lightgrey: "rgba(0,0,0,0.02)",
+    border: "rgba(0,0,0,0.02)",
     background: "#F8FAFD",
     white: "#FFFFFF",
     red: "#FB2C36",

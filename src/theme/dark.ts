@@ -7,7 +7,7 @@ const dark = {
     black: "#fff",
     gray: "#303841",
     grey: "#222222",
-    lightgrey: "rgba(0,0,0,0.2)",
+    border: "rgba(0,0,0,0.2)",
     background: "#222831",
     white: "#222222",
     red: "#FB2C36",
