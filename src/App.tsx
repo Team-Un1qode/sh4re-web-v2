@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import GlobalStyles from "./theme/GlobalStyles";
+import GlobalStyles from "./styles/GlobalStyles";
 import { defaultTheme, darkTheme } from "./theme/theme";
 import Router from "./Router";
 
