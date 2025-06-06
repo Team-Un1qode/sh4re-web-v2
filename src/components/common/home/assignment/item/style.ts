@@ -9,8 +9,8 @@ export const Container = styled.div`
   justify-content: space-between;
   width: 90%;
   min-height: 4rem;
-  background-color: ${({ theme }) => theme.color.white};
-  border-bottom: 0.1rem solid ${({ theme }) => theme.color.gray};
+  background-color: ${({ theme }) => theme.color.backgroundWhite};
+  border-bottom: 0.1rem solid ${({ theme }) => theme.color.borderGray};
   padding: 0.25rem;
   box-sizing: border-box;
   cursor: pointer;
@@ -20,7 +20,7 @@ export const TitleWrap = styled.div`
   font-size: 1.25rem;
   display: flex;
   gap: 0.75rem;
-  color: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.mainText};
   align-items: center;
 `;
 
@@ -28,17 +28,17 @@ export const Status = styled.div<StatusType>`
   font-weight: bold;
   color: ${({ status, theme }) =>
     status === "누락됨"
-      ? theme.color.red
+      ? theme.color.mainRed
       : status === "할당됨"
-      ? theme.color.main
+      ? theme.color.mainBlue
       : status === "제출됨"
-      ? theme.color.green
+      ? theme.color.mainGreen
       : "black"};
 `;
 
 export const Period = styled.div`
   font-size: 1rem;
-  color: ${({ theme }) => theme.color.dark};
+  color: ${({ theme }) => theme.color.placeholder};
 `;
 
 export const Icon = styled.img`

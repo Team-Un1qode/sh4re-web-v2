@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background: ${({ theme }) => theme.color.background};
-  color: ${({ theme }) => theme.color.main};
+  background: ${({ theme }) => theme.color.backgroundWhite};
+  color: ${({ theme }) => theme.color.mainBlue};
   height: 100vh;
 `;
 
@@ -12,7 +12,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.color.background};
+  background-color: ${({ theme }) => theme.color.backgroundWhite};
   padding: 3rem;
   overflow: hidden;
   box-sizing: border-box;

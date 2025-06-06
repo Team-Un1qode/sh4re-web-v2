@@ -3,19 +3,17 @@ import "styled-components";
 declare module "styled-components" {
   export interface DefaultTheme {
     color: {
-      main: string;
-      lightDark: string;
-      sodomy: string;
-      dark: string;
-      black: string;
-      gray: string;
-      grey: string;
-      border: string;
-      background: string;
-      white: string;
-      red: string;
-      orange: string;
-      green: string;
+      mainBlue: string;
+      mainRed: string;
+      mainOrange: string;
+      mainGreen: string;
+      lightBlack: string;
+      selectedWhite: string;
+      backgroundWhite: string;
+      buttonBlack: string;
+      mainText: string;
+      placeholder: string;
+      borderGray: string;
     };
   }
 }

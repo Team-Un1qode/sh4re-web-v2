@@ -9,8 +9,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 4px 4px 20px 0px ${({ theme }) => theme.color.grey};
-  background-color: ${({ theme }) => theme.color.white};
+  box-shadow: 4px 4px 20px 0px ${({ theme }) => theme.color.borderGray};
+  background-color: ${({ theme }) => theme.color.backgroundWhite};
 `;
 
 export const Content = styled.div`
@@ -35,12 +35,12 @@ export const Elem = styled.div`
   display: flex;
   align-items: center;
   height: 3rem;
-  color: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.mainText};
   cursor: pointer;
   gap: 1.5rem;
   border-radius: 0.25rem;
   &:first-child {
-    background-color: ${({ theme }) => theme.color.gray};
+    background-color: ${({ theme }) => theme.color.selectedWhite};
   }
 `;
 
@@ -61,7 +61,7 @@ export const Profile = styled(ElemText)`
   align-items: center;
   font-size: 1.5rem;
   gap: 1.5rem;
-  color: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.mainText};
 `;
 
 export const ProfileIcon = styled.img`

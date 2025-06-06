@@ -19,7 +19,7 @@ export const TitleWrap = styled.div`
   gap: 0.8rem;
   font-size: 1.5rem;
   font-weight: 600;
-  color: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.mainText};
 `;
 
 export const Icon = styled.img`
@@ -32,7 +32,7 @@ export const DetailWrap = styled.div`
   gap: 1rem;
   font-size: 1.2rem;
   font-weight: 500;
-  color: ${({ theme }) => theme.color.dark};
+  color: ${({ theme }) => theme.color.placeholder};
   cursor: pointer;
   user-select: none;
 `;

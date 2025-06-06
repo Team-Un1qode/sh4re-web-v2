@@ -9,8 +9,8 @@ export const Container = styled.div`
   align-items: center;
   width: 90%;
   height: 4rem;
-  background-color: ${({ theme }) => theme.color.white};
-  border-bottom: 0.1rem solid ${({ theme }) => theme.color.gray};
+  background-color: ${({ theme }) => theme.color.backgroundWhite};
+  border-bottom: 0.1rem solid ${({ theme }) => theme.color.borderGray};
   justify-content: space-between;
   padding: 0.25rem;
   box-sizing: border-box;
@@ -21,7 +21,7 @@ export const TitleWrap = styled.div`
   font-size: 1.25rem;
   display: flex;
   gap: 0.75rem;
-  color: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.mainText};
   align-items: center;
 `;
 
@@ -29,13 +29,13 @@ export const Status = styled.div<AnnouncementStatusType>`
   font-weight: bold;
   color: ${({ status, theme }) =>
     status === "과제"
-      ? theme.color.orange
+      ? theme.color.mainOrange
       : status === "공지"
-      ? theme.color.red
+      ? theme.color.mainRed
       : "black"};
 `;
 
 export const Period = styled.div`
   font-size: 1rem;
-  color: ${({ theme }) => theme.color.dark};
+  color: ${({ theme }) => theme.color.placeholder};
 `;

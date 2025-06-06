@@ -61,14 +61,14 @@ export const Header = styled.div`
 
 export const LoginTitle = styled.p`
   font-size: 1.7rem;
-  color: #303841;
+  color: ${({ theme }) => theme.color.mainText};
   font-weight: 500;
   user-select: none;
 `;
 
 export const LoginSubTitle = styled.p`
   font-size: 1rem;
-  color: rgba(0, 0, 0, 0.5);
+  color: ${({ theme }) => theme.color.placeholder};
   font-weight: 400;
   user-select: none;
 `;
@@ -85,6 +85,9 @@ export const InputBox = styled.label`
   align-items: center;
   position: relative;
   user-select: none;
+  border: 1px solid ${({ theme }) => theme.color.placeholder};
+  box-sizing: border-box;
+  border-radius: 10px;
 `;
 
 export const InputIcon = styled.img`
@@ -97,19 +100,18 @@ export const InputIcon = styled.img`
 export const Input = styled.input`
   width: 100%;
   height: 50px;
-  border: 1px solid #b3b3b3;
+  border: 1px solid ${({ theme }) => theme.color.borderGray};
   box-sizing: border-box;
   font-weight: 350;
   padding: 0 0 0 40px;
   border-radius: 10px;
-  border-color: #b3b3b3;
-  color: #303841;
+  color: ${({ theme }) => theme.color.mainText};
   user-select: none;
   &::placeholder {
-    color: #b3b3b3;
+    color: ${({ theme }) => theme.color.placeholder};
   }
   &:focus {
-    outline: 1px solid #2185d5;
+    outline: 1px solid ${({ theme }) => theme.color.mainBlue};
   }
 `;
 
@@ -118,7 +120,8 @@ export const LoginButton = styled.button`
   height: 50px;
   box-sizing: border-box;
   border-radius: 10px;
-  background-color: #303841;
+  border: none;
+  background-color: ${({ theme }) => theme.color.buttonBlack};
   color: white;
   font-size: 1rem;
   font-weight: 600;
@@ -138,12 +141,12 @@ export const AuthBottomContainer = styled.div`
 
 export const AccountPrompt = styled.div`
   font-size: 0.8rem;
-  color: ${({ theme }) => theme.color.main};
+  color: ${({ theme }) => theme.color.placeholder};
   user-select: none;
   span {
     margin-left: 4px;
     a {
-      color: ${({ theme }) => theme.color.main};
+      color: ${({ theme }) => theme.color.mainBlue};
       text-decoration: underline;
       font-weight: 500;
     }
@@ -152,7 +155,7 @@ export const AccountPrompt = styled.div`
 
 export const ForgotPasswordLink = styled.a`
   font-size: 0.8rem;
-  color: ${({ theme }) => theme.color.grey};
+  color: ${({ theme }) => theme.color.placeholder};
   cursor: pointer;
   user-select: none;
 `;
