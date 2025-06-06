@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { COLOR } from "../../../../style/color/color";
 
 export const Container = styled.div`
   width: 90%;
@@ -20,7 +19,7 @@ export const TitleWrap = styled.div`
   gap: 0.8rem;
   font-size: 1.5rem;
   font-weight: 600;
-  color: ${COLOR.black};
+  color: ${({ theme }) => theme.color.mainText};
 `;
 
 export const Icon = styled.img`
@@ -33,7 +32,7 @@ export const DetailWrap = styled.div`
   gap: 1rem;
   font-size: 1.2rem;
   font-weight: 500;
-  color: ${COLOR.dark};
+  color: ${({ theme }) => theme.color.placeholder};
   cursor: pointer;
   user-select: none;
 `;

@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { COLOR } from "../../style/color/color";
+
+export const Wrapper = styled.div`
+  background: ${({ theme }) => theme.color.backgroundWhite};
+  color: ${({ theme }) => theme.color.mainBlue};
+  height: 100vh;
+`;
 
 export const Container = styled.div`
   width: 100%;
@@ -7,7 +12,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${COLOR.background};
+  background-color: ${({ theme }) => theme.color.backgroundWhite};
   padding: 3rem;
   overflow: hidden;
   box-sizing: border-box;
@@ -16,7 +21,7 @@ export const Container = styled.div`
 export const ContentWrap = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 2.5fr;
+  grid-template-rows: 1fr 2.8fr;
   gap: 34px;
   width: 100%;
   height: 100%;

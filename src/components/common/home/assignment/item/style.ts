@@ -1,17 +1,16 @@
 import styled from "styled-components";
-import { COLOR } from "../../../../../style/color/color.ts";
 
 export interface StatusType {
   status: "누락됨" | "할당됨" | "제출됨";
 }
 
 export const Container = styled.div`
-  width: 90%;
-  min-height: 4rem;
-  background-color: white;
-  border-bottom: 0.1rem solid ${COLOR.gray};
   display: flex;
   justify-content: space-between;
+  width: 90%;
+  min-height: 4rem;
+  background-color: ${({ theme }) => theme.color.backgroundWhite};
+  border-bottom: 0.1rem solid ${({ theme }) => theme.color.borderGray};
   padding: 0.25rem;
   box-sizing: border-box;
   cursor: pointer;
@@ -21,25 +20,25 @@ export const TitleWrap = styled.div`
   font-size: 1.25rem;
   display: flex;
   gap: 0.75rem;
-  color: ${COLOR.black};
+  color: ${({ theme }) => theme.color.mainText};
   align-items: center;
 `;
 
 export const Status = styled.div<StatusType>`
   font-weight: bold;
-  color: ${({ status }) =>
+  color: ${({ status, theme }) =>
     status === "누락됨"
-      ? COLOR.red
+      ? theme.color.mainRed
       : status === "할당됨"
-      ? COLOR.main
+      ? theme.color.mainBlue
       : status === "제출됨"
-      ? COLOR.green
+      ? theme.color.mainGreen
       : "black"};
 `;
 
 export const Period = styled.div`
   font-size: 1rem;
-  color: ${COLOR.dark};
+  color: ${({ theme }) => theme.color.placeholder};
 `;
 
 export const Icon = styled.img`
