@@ -60,15 +60,15 @@ export const Header = styled.div`
 `;
 
 export const RegisterTitle = styled.p`
-  font-size: 1.7rem;
+  font-size: 22px;
   color: ${({ theme }) => theme.color.mainText};
   font-weight: 500;
   user-select: none;
 `;
 
 export const RegisterSubTitle = styled.p`
-  font-size: 1rem;
-  color: ${({ theme }) => theme.color.mainText};
+  font-size: 12px;
+  color: ${({ theme }) => theme.color.placeholder};
   font-weight: 400;
   user-select: none;
 `;
@@ -112,6 +112,7 @@ export const Input = styled.input`
   padding: 0 0 0 40px;
   border-radius: 10px;
   border-color: ${({ theme }) => theme.color.borderGray};
+  background-color: ${({ theme }) => theme.color.backgroundWhite};
   color: ${({ theme }) => theme.color.mainText};
   user-select: none;
   &::placeholder {
@@ -132,6 +133,7 @@ export const SmallInput = styled.input`
   font-weight: 350;
   padding: 0 0 0 20px;
   border-radius: 10px;
+  background-color: ${({ theme }) => theme.color.backgroundWhite};
   color: ${({ theme }) => theme.color.mainText};
   user-select: none;
   &::placeholder {
@@ -152,7 +154,8 @@ export const Select = styled.select`
   font-weight: 350;
   padding: 0 0 0 20px;
   border-radius: 10px;
-  color: ${({ theme }) => theme.color.mainText};
+  background-color: ${({ theme }) => theme.color.backgroundWhite};
+  color: ${({ theme }) => theme.color.selectText};
   user-select: none;
   &::placeholder {
     color: ${({ theme }) => theme.color.placeholder};
@@ -169,7 +172,7 @@ export const RegisterButton = styled.button`
   border-radius: 10px;
   border: none;
   background-color: ${({ theme }) => theme.color.buttonBlack};
-  color: white;
+  color: ${({ theme }) => theme.color.buttonText};
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -185,7 +188,7 @@ export const AccountPromptContainer = styled.div`
 `;
 
 export const AccountPrompt = styled.div`
-  font-size: 0.8rem;
+  font-size: 0.8em;
   color: ${({ theme }) => theme.color.placeholder};
   user-select: none;
   span {

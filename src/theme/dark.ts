@@ -9,6 +9,8 @@ const dark = {
     backgroundWhite: "#2C2C2C",
     buttonBlack: "#F3F3F3",
     mainText: "#FFFFFF",
+    selectText: "#959595",
+    buttonText: "#222222",
     placeholder: "#959595",
     borderGray: "rgba(0, 0, 0, 0.02)",
   },

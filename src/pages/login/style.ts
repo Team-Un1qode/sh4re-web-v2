@@ -60,14 +60,14 @@ export const Header = styled.div`
 `;
 
 export const LoginTitle = styled.p`
-  font-size: 1.7rem;
+  font-size: 22px;
   color: ${({ theme }) => theme.color.mainText};
   font-weight: 500;
   user-select: none;
 `;
 
 export const LoginSubTitle = styled.p`
-  font-size: 1rem;
+  font-size: 12px;
   color: ${({ theme }) => theme.color.placeholder};
   font-weight: 400;
   user-select: none;
@@ -105,6 +105,7 @@ export const Input = styled.input`
   font-weight: 350;
   padding: 0 0 0 40px;
   border-radius: 10px;
+  background-color: ${({ theme }) => theme.color.backgroundWhite};
   color: ${({ theme }) => theme.color.mainText};
   user-select: none;
   &::placeholder {
@@ -122,7 +123,7 @@ export const LoginButton = styled.button`
   border-radius: 10px;
   border: none;
   background-color: ${({ theme }) => theme.color.buttonBlack};
-  color: white;
+  color: ${({ theme }) => theme.color.buttonText};
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -140,7 +141,7 @@ export const AuthBottomContainer = styled.div`
 `;
 
 export const AccountPrompt = styled.div`
-  font-size: 0.8rem;
+  font-size: 0.8em;
   color: ${({ theme }) => theme.color.placeholder};
   user-select: none;
   span {
@@ -154,7 +155,7 @@ export const AccountPrompt = styled.div`
 `;
 
 export const ForgotPasswordLink = styled.a`
-  font-size: 0.8rem;
+  font-size: 0.8em;
   color: ${({ theme }) => theme.color.placeholder};
   cursor: pointer;
   user-select: none;

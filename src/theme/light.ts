@@ -9,6 +9,8 @@ const light = {
     backgroundWhite: "#F8FAFD",
     buttonBlack: "#303841",
     mainText: "#222222",
+    selectText: "#959595",
+    buttonText: "#FFFFFF",
     placeholder: "rgba(22, 22, 22, 0.5)",
     borderGray: "rgba(0, 0, 0, 0.02)",
   },
