@@ -10,7 +10,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 4px 4px 20px 0px ${({ theme }) => theme.color.borderGray};
-  background-color: ${({ theme }) => theme.color.backgroundWhite};
+  background-color: ${({ theme }) => theme.color.background};
 `;
 
 export const Content = styled.div`

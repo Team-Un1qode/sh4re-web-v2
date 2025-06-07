@@ -7,6 +7,7 @@ const light = {
     lightBlack: "#3A4750",
     selectedWhite: "#F8FAFD",
     backgroundWhite: "#F8FAFD",
+    background: "#FFFFFF",
     buttonBlack: "#303841",
     mainText: "#222222",
     selectText: "#959595",
