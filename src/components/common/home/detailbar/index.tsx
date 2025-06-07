@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import type { SectionProps } from "../../../../types/home/SectionPorps";
 import * as S from "./style";
+import ArrowReversedIcon from "../../../../assets/icons/arrow_reversed.svg?react";
 
 const DetailBar = ({ title, icon, link }: SectionProps) => {
   const navigate = useNavigate();
@@ -13,7 +14,9 @@ const DetailBar = ({ title, icon, link }: SectionProps) => {
         </S.TitleWrap>
         <S.DetailWrap onClick={() => navigate(link)}>
           자세히보기
-          <S.DetailIcon src='/arrow_reversed.svg' />
+          <S.DetailIcon>
+            <ArrowReversedIcon />
+          </S.DetailIcon>
         </S.DetailWrap>
       </S.ContentWrap>
     </S.Container>
