@@ -1,7 +1,7 @@
 import * as S from "./style";
 
-const Class = () => {
+const Handouts = () => {
   return <div></div>;
 };
 
-export default Class;
+export default Handouts;
