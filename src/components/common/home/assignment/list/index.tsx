@@ -1,9 +1,9 @@
-import type { DetailbarProps } from "../../../../../types/home/DetailbarProps.ts";
+import type { SectionProps } from "../../../../../types/home/SectionPorps.ts";
 import DetailBar from "../../detailbar";
 import * as S from "./style.ts";
 import AssignmentItem from "../item";
 
-const AssignmentSection = ({ title, icon, link }: DetailbarProps) => {
+const AssignmentSection = ({ title, icon, link }: SectionProps) => {
   return (
     <S.Container>
       <DetailBar title={title} icon={icon} link={link} />

@@ -33,7 +33,7 @@ const Register = () => {
         <S.Background />
       </S.BackgroundWrapper>
       <S.RegisterContainer>
-        <S.RegisterBox onSubmit={handleSubmit(onSubmit)}>
+        <S.RegisterBox onSubmit={handleSubmit(onSubmit)} autoComplete='off'>
           <S.Header>
             <S.RegisterTitle>회원가입</S.RegisterTitle>
             <S.RegisterSubTitle>

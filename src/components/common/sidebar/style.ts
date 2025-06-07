@@ -23,13 +23,13 @@ export const Content = styled.div`
 export const Logo = styled.img`
   width: 6rem;
 `;
-// 리스트 전체
+
 export const List = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 `;
-// 리스트 각각 요소
+
 export const Elem = styled.div`
   width: 100%;
   display: flex;
@@ -44,10 +44,28 @@ export const Elem = styled.div`
   }
 `;
 
-export const Icon = styled.img`
+export const ProfileIcon = styled.div`
+  width: 1.75rem;
+  display: flex;
+  align-items: center;
+  & > svg {
+    width: 100%;
+    height: 100%;
+    fill: ${({ theme }) => theme.color.mainBlue};
+  }
+`;
+
+export const Icon = styled.div`
   width: 1.5rem;
   height: 1.25rem;
   padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  & > svg {
+    width: 100%;
+    height: 100%;
+    fill: ${({ theme }) => theme.color.mainBlue};
+  }
 `;
 
 export const ElemText = styled.div`
@@ -59,11 +77,8 @@ export const Profile = styled(ElemText)`
   padding: 2rem 1.5rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 1.5rem;
   gap: 1.5rem;
   color: ${({ theme }) => theme.color.mainText};
-`;
-
-export const ProfileIcon = styled.img`
-  width: 1.75rem;
 `;
