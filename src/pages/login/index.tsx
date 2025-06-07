@@ -22,12 +22,10 @@ const Login = () => {
         <S.Background />
       </S.BackgroundWrapper>
       <S.LoginContainer>
-        <S.LoginBox onSubmit={handleSubmit(onSubmit)}>
+        <S.LoginBox onSubmit={handleSubmit(onSubmit)} autoComplete='none'>
           <S.Header>
             <S.LoginTitle>로그인</S.LoginTitle>
-            <S.LoginSubTitle>
-              서비스를 시작하려면 로그인해주세요.
-            </S.LoginSubTitle>
+            <S.LoginSubTitle>서비스를 시작하려면 로그인하세요.</S.LoginSubTitle>
           </S.Header>
           <S.InputContainer>
             <S.InputBox>
