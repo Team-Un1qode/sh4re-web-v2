@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: ${({ theme }) => theme.color.backgroundWhite};
-  align-items: center;
-  box-shadow: 0px 3px 24px 0px ${({ theme }) => theme.color.borderGray};
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: ${({ theme }) => theme.color.background};
+  box-shadow: 0px 3px 24px 0px ${({ theme }) => theme.color.borderGray};
   border-radius: 0.25rem;
   overflow: hidden;
   &:first-child {
@@ -15,7 +15,7 @@ export const Container = styled.div`
   }
 `;
 
-export const HandOutsList = styled.div`
+export const AssignmentList = styled.div`
   width: 100%;
   height: 100%;
   display: flex;

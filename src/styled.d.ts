@@ -10,6 +10,7 @@ declare module "styled-components" {
       lightBlack: string;
       selectedWhite: string;
       backgroundWhite: string;
+      background: string;
       buttonBlack: string;
       mainText: string;
       selectText: string;

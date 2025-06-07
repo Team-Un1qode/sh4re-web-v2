@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Container = styled.div`
   background: ${({ theme }) => theme.color.backgroundWhite};
   color: ${({ theme }) => theme.color.mainBlue};
   height: 100vh;
 `;
 
-export const Container = styled.div`
+export const Wrap = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -22,7 +22,7 @@ export const ContentWrap = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 2.8fr;
-  gap: 34px;
+  gap: 3rem;
   width: 100%;
   height: 100%;
 `;

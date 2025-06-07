@@ -9,7 +9,6 @@ export const Container = styled.div`
   align-items: center;
   width: 90%;
   height: 4rem;
-  background-color: ${({ theme }) => theme.color.backgroundWhite};
   border-bottom: 0.1rem solid ${({ theme }) => theme.color.borderGray};
   justify-content: space-between;
   padding: 0.25rem;

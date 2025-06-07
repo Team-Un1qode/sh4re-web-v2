@@ -3,6 +3,11 @@ import Login from "../pages/login";
 import Register from "../pages/register";
 import Home from "../pages/home";
 import SidebarLayout from "../components/layouts/SidebarLayout";
+import Handouts from "../pages/handouts";
+import Code from "../pages/code";
+import Task from "../pages/task";
+import Announcement from "../pages/announcement";
+import Profile from "../pages/profile";
 
 const Router = () => {
   return (
@@ -12,6 +17,11 @@ const Router = () => {
         <Route path='/register' element={<Register />} />
         <Route element={<SidebarLayout />}>
           <Route path='/' element={<Home />} />
+          <Route path='/handouts' element={<Handouts />} />
+          <Route path='/code' element={<Code />} />
+          <Route path='/task' element={<Task />} />
+          <Route path='/announcement' element={<Announcement />} />
+          <Route path='/profile' element={<Profile />} />
         </Route>
       </Routes>
     </BrowserRouter>
