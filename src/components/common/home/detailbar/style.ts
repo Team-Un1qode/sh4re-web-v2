@@ -22,10 +22,18 @@ export const TitleWrap = styled.div`
   color: ${({ theme }) => theme.color.mainText};
 `;
 
-export const Icon = styled.img`
-  height: 100%;
+export const Icon = styled.div`
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & > svg {
+    width: 100%;
+    height: 100%;
+    fill: ${({ theme }) => theme.color.mainText};
+  }
 `;
-
 export const DetailWrap = styled.div`
   display: flex;
   align-items: center;

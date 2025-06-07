@@ -44,10 +44,28 @@ export const Elem = styled.div`
   }
 `;
 
-export const Icon = styled.img`
+export const ProfileIcon = styled.div`
+  width: 1.75rem;
+  display: flex;
+  align-items: center;
+  & > svg {
+    width: 100%;
+    height: 100%;
+    fill: ${({ theme }) => theme.color.mainBlue};
+  }
+`;
+
+export const Icon = styled.div`
   width: 1.5rem;
   height: 1.25rem;
   padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  & > svg {
+    width: 100%;
+    height: 100%;
+    fill: ${({ theme }) => theme.color.mainBlue};
+  }
 `;
 
 export const ElemText = styled.div`
@@ -63,8 +81,4 @@ export const Profile = styled(ElemText)`
   font-size: 1.5rem;
   gap: 1.5rem;
   color: ${({ theme }) => theme.color.mainText};
-`;
-
-export const ProfileIcon = styled.img`
-  width: 1.75rem;
 `;

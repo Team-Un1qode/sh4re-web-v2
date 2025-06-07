@@ -1,14 +1,9 @@
 import DetailBar from "../../detailbar/index.tsx";
 import * as S from "./style.ts";
 import AnnouncementItem from "../item/index.tsx";
+import type { SectionProps } from "../../../../../types/home/SectionPorps.ts";
 
-export interface AnnouncementBarProps {
-  title: string;
-  icon: string;
-  link: string;
-}
-
-const AnnouncementSection = ({ title, icon, link }: AnnouncementBarProps) => {
+const AnnouncementSection = ({ title, icon, link }: SectionProps) => {
   return (
     <S.Container>
       <DetailBar title={title} icon={icon} link={link} />

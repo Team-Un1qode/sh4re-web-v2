@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import * as S from "./style.ts";
+import ArrowReversedIcon from "../../../../../assets/icons/arrow_reversed.svg?react";
 
 export interface ContentBoxProps {
   period: string;
@@ -17,7 +18,9 @@ const AssignmentItem = ({ status, title, period, link }: ContentBoxProps) => {
         {title}
         <S.Period>~ {period}</S.Period>
       </S.TitleWrap>
-      <S.Icon src='/arrow_reversed.svg' />
+      <S.Icon>
+        <ArrowReversedIcon />
+      </S.Icon>
     </S.Container>
   );
 };

@@ -1,14 +1,9 @@
 import DetailBar from "../../detailbar/index.tsx";
 import * as S from "./style.ts";
 import HandOutsItem from "../item/index.tsx";
+import type { SectionProps } from "../../../../../types/home/SectionPorps.ts";
 
-export interface HandOutsBarProps {
-  title: string;
-  icon: string;
-  link: string;
-}
-
-const HandOutsSection = ({ title, icon, link }: HandOutsBarProps) => {
+const HandOutsSection = ({ title, icon, link }: SectionProps) => {
   return (
     <S.Container>
       <DetailBar title={title} icon={icon} link={link} />
@@ -77,46 +72,46 @@ const HandOutsSection = ({ title, icon, link }: HandOutsBarProps) => {
           name='채근영'
         />
         <HandOutsItem
-            status='pptx'
-            title='정보 수업 첫 강의.pptx'
-            period='2025.05.18'
-            link=''
-            name='김은찬'
+          status='pptx'
+          title='정보 수업 첫 강의.pptx'
+          period='2025.05.18'
+          link=''
+          name='김은찬'
         />
         <HandOutsItem
-            status='pdf'
-            title='알고리즘 개념 총정리.pdf'
-            period='2025.05.17'
-            link=''
-            name='오용준'
+          status='pdf'
+          title='알고리즘 개념 총정리.pdf'
+          period='2025.05.17'
+          link=''
+          name='오용준'
         />
         <HandOutsItem
-            status='py'
-            title='list_comprehension.py'
-            period='2025.05.16'
-            link=''
-            name='채근영'
+          status='py'
+          title='list_comprehension.py'
+          period='2025.05.16'
+          link=''
+          name='채근영'
         />
         <HandOutsItem
-            status='pptx'
-            title='정보 수업 첫 강의.pptx'
-            period='2025.05.18'
-            link=''
-            name='김은찬'
+          status='pptx'
+          title='정보 수업 첫 강의.pptx'
+          period='2025.05.18'
+          link=''
+          name='김은찬'
         />
         <HandOutsItem
-            status='pdf'
-            title='알고리즘 개념 총정리.pdf'
-            period='2025.05.17'
-            link=''
-            name='오용준'
+          status='pdf'
+          title='알고리즘 개념 총정리.pdf'
+          period='2025.05.17'
+          link=''
+          name='오용준'
         />
         <HandOutsItem
-            status='py'
-            title='list_comprehension.py'
-            period='2025.05.16'
-            link=''
-            name='채근영'
+          status='py'
+          title='list_comprehension.py'
+          period='2025.05.16'
+          link=''
+          name='채근영'
         />
       </S.HandOutsList>
     </S.Container>

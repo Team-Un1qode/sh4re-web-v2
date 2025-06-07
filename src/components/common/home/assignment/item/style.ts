@@ -41,6 +41,10 @@ export const Period = styled.div`
   color: ${({ theme }) => theme.color.placeholder};
 `;
 
-export const Icon = styled.img`
+export const Icon = styled.div`
   width: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${({ theme }) => theme.color.mainText};
 `;
