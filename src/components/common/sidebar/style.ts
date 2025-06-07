@@ -30,7 +30,7 @@ export const List = styled.div`
   gap: 1.5rem;
 `;
 
-export const Elem = styled.div`
+export const Elem = styled.div<{ isSelected: boolean }>`
   width: 100%;
   display: flex;
   align-items: center;
@@ -39,9 +39,8 @@ export const Elem = styled.div`
   cursor: pointer;
   gap: 1.5rem;
   border-radius: 0.25rem;
-  &:first-child {
-    background-color: ${({ theme }) => theme.color.selectedWhite};
-  }
+  background-color: ${({ isSelected, theme }) =>
+    isSelected ? theme.color.selectedWhite : "transparent"};
 `;
 
 export const ProfileIcon = styled.div`
