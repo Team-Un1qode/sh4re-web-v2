@@ -67,7 +67,7 @@ export const LoginTitle = styled.p`
 `;
 
 export const LoginSubTitle = styled.p`
-  font-size: 12px;
+  font-size: 14px;
   color: ${({ theme }) => theme.color.placeholder};
   font-weight: 400;
   user-select: none;
@@ -141,7 +141,7 @@ export const AuthBottomContainer = styled.div`
 `;
 
 export const AccountPrompt = styled.div`
-  font-size: 0.8em;
+  font-size: 12px;
   color: ${({ theme }) => theme.color.placeholder};
   user-select: none;
   span {
@@ -155,8 +155,9 @@ export const AccountPrompt = styled.div`
 `;
 
 export const ForgotPasswordLink = styled.a`
-  font-size: 0.8em;
+  font-size: 12px;
   color: ${({ theme }) => theme.color.placeholder};
   cursor: pointer;
+  text-decoration: none;
   user-select: none;
 `;

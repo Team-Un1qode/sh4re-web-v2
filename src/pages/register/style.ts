@@ -67,7 +67,7 @@ export const RegisterTitle = styled.p`
 `;
 
 export const RegisterSubTitle = styled.p`
-  font-size: 12px;
+  font-size: 14px;
   color: ${({ theme }) => theme.color.placeholder};
   font-weight: 400;
   user-select: none;
@@ -111,7 +111,6 @@ export const Input = styled.input`
   font-weight: 350;
   padding: 0 0 0 40px;
   border-radius: 10px;
-  border-color: ${({ theme }) => theme.color.borderGray};
   background-color: ${({ theme }) => theme.color.backgroundWhite};
   color: ${({ theme }) => theme.color.mainText};
   user-select: none;
@@ -188,7 +187,7 @@ export const AccountPromptContainer = styled.div`
 `;
 
 export const AccountPrompt = styled.div`
-  font-size: 0.8em;
+  font-size: 12px;
   color: ${({ theme }) => theme.color.placeholder};
   user-select: none;
   span {
