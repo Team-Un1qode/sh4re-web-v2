@@ -1,18 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./styles/GlobalStyles";
-import { defaultTheme, darkTheme } from "./theme/theme";
+import { lightTheme, darkTheme } from "./theme/theme";
 import Router from "./Router";
 
 const themes = {
-  default: defaultTheme,
   dark: darkTheme,
+  light: lightTheme,
 };
 type Theme = keyof typeof themes;
 const keysOfThemes = Object.keys(themes) as Theme[];
 
 function App() {
-  const [theme, setTheme] = useState<Theme>("default");
+  const [theme, setTheme] = useState<Theme>(() => {
+    const saved = localStorage.getItem("theme");
+    return (
+      saved && keysOfThemes.includes(saved as Theme) ? saved : "dark"
+    ) as Theme;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   return (
     <ThemeProvider theme={themes[theme]}>
