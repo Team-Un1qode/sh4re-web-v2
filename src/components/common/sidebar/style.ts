@@ -23,13 +23,13 @@ export const Content = styled.div`
 export const Logo = styled.img`
   width: 6rem;
 `;
-// 리스트 전체
+
 export const List = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 `;
-// 리스트 각각 요소
+
 export const Elem = styled.div`
   width: 100%;
   display: flex;
@@ -59,6 +59,7 @@ export const Profile = styled(ElemText)`
   padding: 2rem 1.5rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 1.5rem;
   gap: 1.5rem;
   color: ${({ theme }) => theme.color.mainText};
