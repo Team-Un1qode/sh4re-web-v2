@@ -37,7 +37,7 @@ const HandOutsSection = ({ title, icon, link }: SectionProps) => {
           name="김성한"
         />
         <HandOutsItem
-          status="etc"
+          status="txt"
           title="디자인을 잘 하고 싶나요?.txt"
           period="2025.05.19"
           link=""
