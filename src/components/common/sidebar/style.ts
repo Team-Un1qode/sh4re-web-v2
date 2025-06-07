@@ -14,7 +14,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 2rem 1.5rem;
+  padding: 1.7rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
