@@ -29,7 +29,7 @@ const Sidebar = () => {
           {sidebarItems.map(({ icon: IconComponent, text, key }) => (
             <S.Elem
               key={key}
-              isSelected={currentPath === key}
+              $isselected={currentPath === key}
               onClick={() => navigate(`${key}`)}
             >
               <S.Icon>
