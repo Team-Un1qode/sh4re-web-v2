@@ -1,7 +1,8 @@
 // import * as S from "./style";
+import HandOutsSection from "../../components/common/home/handouts/section/index.tsx";
 
-const Handouts = () => {
-  return <div></div>;
+const HandOuts = () => {
+  return <HandOutsSection title='수업 자료' icon='' link='' variant='detail' />;
 };
 
-export default Handouts;
+export default HandOuts;
