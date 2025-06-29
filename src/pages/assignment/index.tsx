@@ -1,7 +1,7 @@
 // import * as S from "./style";
 
-const Task = () => {
+const Assignment = () => {
   return <div></div>;
 };
 
-export default Task;
+export default Assignment;
