@@ -8,7 +8,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   width: 90%;
-  height: 4rem;
+  min-height: 4rem;
   border-bottom: 0.1rem solid ${({ theme }) => theme.color.borderGray};
   justify-content: space-between;
   padding: 0.25rem;
@@ -26,6 +26,8 @@ export const TitleWrap = styled.div`
 
 export const Status = styled.div<AnnouncementStatusType>`
   font-weight: bold;
+  display: flex;
+  align-items: center;
   color: ${({ status, theme }) =>
     status === "과제"
       ? theme.color.mainOrange

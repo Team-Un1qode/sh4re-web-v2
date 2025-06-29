@@ -12,7 +12,7 @@ const sidebarItems = [
   { icon: HomeIcon, text: "홈", key: "/" },
   { icon: AnnouncementIcon, text: "공지사항", key: "/announcement" },
   { icon: CodeIcon, text: "코드", key: "/code" },
-  { icon: TaskIcon, text: "과제 목록", key: "/task" },
+  { icon: TaskIcon, text: "과제 목록", key: "/assignment" },
   { icon: HandoutsIcon, text: "수업 자료", key: "/handouts" },
   { icon: ProfileIcon, text: "프로필", key: "/profile" },
 ];
@@ -29,7 +29,7 @@ const Sidebar = () => {
           {sidebarItems.map(({ icon: IconComponent, text, key }) => (
             <S.Elem
               key={key}
-              isSelected={currentPath === key}
+              $isselected={currentPath === key}
               onClick={() => navigate(`${key}`)}
             >
               <S.Icon>
