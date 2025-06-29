@@ -1,4 +1,3 @@
-// import * as S from "./style";
 import HandOutsSection from "../../components/common/home/handouts/section/index.tsx";
 
 const HandOuts = () => {

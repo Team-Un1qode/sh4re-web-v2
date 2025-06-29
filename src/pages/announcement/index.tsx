@@ -1,4 +1,3 @@
-// import * as S from "./style";
 import AnnouncementSection from "../../components/common/home/announcement/section";
 
 const Announcement = () => {
