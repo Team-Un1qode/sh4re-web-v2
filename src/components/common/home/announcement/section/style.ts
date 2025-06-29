@@ -41,11 +41,3 @@ export const AssignmentList = styled.div<{
           overflow: auto;
         `}
 `;
-
-export const Title = styled.h2`
-  width: 100%;
-  margin: 3rem 1.5rem 1.5rem 11rem;
-  font-size: 3rem;
-  font-weight: 600;
-  color: ${({ theme }) => theme.color.mainText};
-`;
