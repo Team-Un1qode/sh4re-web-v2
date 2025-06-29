@@ -32,7 +32,14 @@ export const AssignmentList = styled.div<{
   display: flex;
   align-items: center;
   flex-direction: column;
-  overflow: auto;
+  ${(props) =>
+    props.$variant === "home"
+      ? css`
+          overflow: hidden;
+        `
+      : css`
+          overflow: auto;
+        `}
 `;
 
 export const Title = styled.h2`
