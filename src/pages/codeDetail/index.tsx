@@ -1,14 +1,11 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
 
-const Code = () => {
-  const navigate = useNavigate();
+const CodeDetail = () => {
   const codes = [
     {
-      id: 1,
       title: "Python 기초 예제",
       student: "1217채근영(chaeyn)",
       code: `def hello_world():
@@ -19,7 +16,6 @@ name = "채근영"
 print(f"이름: {name}")`,
     },
     {
-      id: 2,
       title: "리스트 컴프리헨션",
       student: "1217채근영(chaeyn)",
       code: `numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -278,11 +274,8 @@ if weather:
   useEffect(() => {
     hljs.highlightAll();
   }, []);
-  const handleCodeClick = (codeId: string) => {
-    navigate(`/code/${codeId}`);
-  };
   return (
-    <S.Container onClick={() => handleCodeClick(codes.id)}>
+    <S.Container>
       {codes.map((code, index) => (
         <S.CodeContainer key={index}>
           <S.CodeBox>
@@ -300,4 +293,4 @@ if weather:
   );
 };
 
-export default Code;
+export default CodeDetail;
