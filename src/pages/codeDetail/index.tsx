@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import * as S from "./style";
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
@@ -286,36 +287,46 @@ if weather:
     print(f"날씨: {weather['condition']}")`,
   },
 ];
-
-const Code = () => {
+const CodeDetail = () => {
+  const { id } = useParams<{ id: string }>();
+  const code = codes.find((c) => c.id === Number(id));
+  const codeRef = useRef<HTMLElement>(null); // 나중에 확인하기
+  useEffect(() => {
+    if (code) {
+      hljs.highlightAll();
+    }
+  }, [code]);
   const navigate = useNavigate();
+  useEffect(() => {
+    if (!code) {
+      navigate(`/code`, { replace: true });
+    }
+  }, [code, navigate]);
 
   useEffect(() => {
-    hljs.highlightAll();
-  }, []);
-  const handleCodeClick = (codeId: string) => {
-    navigate(`/code/${codeId}`);
-  };
+    if (code && codeRef.current) {
+      // 나중에 확인하기
+      codeRef.current.removeAttribute("data-highlighted");
+      codeRef.current.textContent = code.code;
+      hljs.highlightElement(codeRef.current);
+    }
+  }, [code]);
+
+  if (!code) return null;
   return (
     <S.Container>
-      {codes.map((code) => (
-        <S.CodeContainer
-          key={code.id}
-          onClick={() => handleCodeClick(code.id.toString())}
-        >
-          <S.CodeBox>
-            <S.CodePre>
-              <S.CodeText className='language-python'>{code.code}</S.CodeText>
-            </S.CodePre>
-          </S.CodeBox>
-          <S.CodeInfo>
-            <S.CodeTitle>{code.title}</S.CodeTitle>
-            <S.StudentInfo>{code.student}</S.StudentInfo>
-          </S.CodeInfo>
-        </S.CodeContainer>
-      ))}
+      <S.CodeContainer>
+        <S.CodePre>
+          <S.CodeText ref={codeRef} className='language-python' />
+        </S.CodePre>
+      </S.CodeContainer>
+      <S.InfoContainer>
+        <S.InfoTopBar>
+          <S.CodeTitle>{code.title}</S.CodeTitle>
+          <S.StudentInfo>{code.student}</S.StudentInfo>
+        </S.InfoTopBar>
+      </S.InfoContainer>
     </S.Container>
   );
 };
-
-export default Code;
+export default CodeDetail;

@@ -5,6 +5,7 @@ import Home from "../pages/home";
 import SidebarLayout from "../components/layouts/SidebarLayout";
 import Handouts from "../pages/handouts";
 import Code from "../pages/code";
+import CodeDetail from "../pages/codeDetail";
 import Assignment from "../pages/assignment";
 import Announcement from "../pages/announcement";
 import Profile from "../pages/profile";
@@ -19,6 +20,7 @@ const Router = () => {
           <Route path='/' element={<Home />} />
           <Route path='/handouts' element={<Handouts />} />
           <Route path='/code' element={<Code />} />
+          <Route path='/code/:id' element={<CodeDetail />} />
           <Route path='/assignment' element={<Assignment />} />
           <Route path='/announcement' element={<Announcement />} />
           <Route path='/profile' element={<Profile />} />

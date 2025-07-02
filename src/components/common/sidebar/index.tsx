@@ -29,7 +29,9 @@ const Sidebar = () => {
           {sidebarItems.map(({ icon: IconComponent, text, key }) => (
             <S.Elem
               key={key}
-              $isselected={currentPath === key}
+              $isselected={
+                key == "/" ? currentPath === "/" : currentPath.startsWith(key)
+              }
               onClick={() => navigate(`${key}`)}
             >
               <S.Icon>
