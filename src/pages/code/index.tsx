@@ -3,37 +3,37 @@ import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
+import type { CodeType } from "../../types/code/CodeType";
 
-const Code = () => {
-  const navigate = useNavigate();
-  const codes = [
-    {
-      id: 1,
-      title: "Python 기초 예제",
-      student: "1217채근영(chaeyn)",
-      code: `def hello_world():
+export const codes: CodeType[] = [
+  {
+    id: 1,
+    title: "Python 기초 예제",
+    student: "1217채근영(chaeyn)",
+    code: `def hello_world():
     print("Hello, World!")
     return "안녕하세요"
 
 name = "채근영"
 print(f"이름: {name}")`,
-    },
-    {
-      id: 2,
-      title: "리스트 컴프리헨션",
-      student: "1217채근영(chaeyn)",
-      code: `numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  },
+  {
+    id: 2,
+    title: "리스트 컴프리헨션",
+    student: "1217채근영(chaeyn)",
+    code: `numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 even_squares = [x**2 for x in numbers if x % 2 == 0]
 print(f"짝수의 제곱: {even_squares}")
 
 # 중첩 리스트 컴프리헨션
 matrix = [[i*j for j in range(1, 4)] for i in range(1, 4)]
 print(f"구구단 표: {matrix}")`,
-    },
-    {
-      title: "딕셔너리 활용",
-      student: "1217채근영(chaeyn)",
-      code: `student_info = {
+  },
+  {
+    id: 3,
+    title: "딕셔너리 활용",
+    student: "1217채근영(chaeyn)",
+    code: `student_info = {
     "이름": "채근영",
     "학번": "1217",
     "성적": {"수학": 95, "영어": 88, "과학": 92}
@@ -44,11 +44,12 @@ for subject, score in student_info["성적"].items():
 
 average = sum(student_info["성적"].values()) / len(student_info["성적"])
 print(f"평균: {average:.1f}점")`,
-    },
-    {
-      title: "클래스와 상속",
-      student: "1217채근영(chaeyn)",
-      code: `class Animal:
+  },
+  {
+    id: 4,
+    title: "클래스와 상속",
+    student: "1217채근영(chaeyn)",
+    code: `class Animal:
     def __init__(self, name):
         self.name = name
     
@@ -67,11 +68,12 @@ dog = Dog("바둑이")
 cat = Cat("나비")
 print(dog.speak())
 print(cat.speak())`,
-    },
-    {
-      title: "파일 입출력",
-      student: "1217채근영(chaeyn)",
-      code: `# 파일 쓰기
+  },
+  {
+    id: 5,
+    title: "파일 입출력",
+    student: "1217채근영(chaeyn)",
+    code: `# 파일 쓰기
 data = ["사과", "바나나", "오렌지"]
 with open("fruits.txt", "w", encoding="utf-8") as f:
     for fruit in data:
@@ -82,11 +84,12 @@ with open("fruits.txt", "r", encoding="utf-8") as f:
     content = f.read()
     print("파일 내용:")
     print(content)`,
-    },
-    {
-      title: "예외 처리",
-      student: "1217채근영(chaeyn)",
-      code: `def divide_numbers(a, b):
+  },
+  {
+    id: 6,
+    title: "예외 처리",
+    student: "1217채근영(chaeyn)",
+    code: `def divide_numbers(a, b):
     try:
         result = a / b
         return result
@@ -101,11 +104,12 @@ with open("fruits.txt", "r", encoding="utf-8") as f:
 
 print(divide_numbers(10, 2))
 print(divide_numbers(10, 0))`,
-    },
-    {
-      title: "데코레이터 패턴",
-      student: "1217채근영(chaeyn)",
-      code: `def logger(func):
+  },
+  {
+    id: 7,
+    title: "데코레이터 패턴",
+    student: "1217채근영(chaeyn)",
+    code: `def logger(func):
     def wrapper(*args, **kwargs):
         print(f"함수 {func.__name__} 시작")
         result = func(*args, **kwargs)
@@ -121,11 +125,12 @@ def calculate_factorial(n):
 
 result = calculate_factorial(5)
 print(f"5! = {result}")`,
-    },
-    {
-      title: "람다와 고차함수",
-      student: "1217채근영(chaeyn)",
-      code: `numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  },
+  {
+    id: 8,
+    title: "람다와 고차함수",
+    student: "1217채근영(chaeyn)",
+    code: `numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # map, filter, reduce 활용
 squared = list(map(lambda x: x**2, numbers))
@@ -137,11 +142,12 @@ total = reduce(lambda x, y: x + y, numbers)
 print(f"제곱: {squared}")
 print(f"짝수: {evens}")
 print(f"합계: {total}")`,
-    },
-    {
-      title: "제너레이터",
-      student: "1217채근영(chaeyn)",
-      code: `def fibonacci_generator(n):
+  },
+  {
+    id: 9,
+    title: "제너레이터",
+    student: "1217채근영(chaeyn)",
+    code: `def fibonacci_generator(n):
     a, b = 0, 1
     count = 0
     while count < n:
@@ -157,11 +163,12 @@ print(f"피보나치 수열: {fib_list}")
 # 제너레이터 표현식
 squares_gen = (x**2 for x in range(1, 6))
 print(f"제곱수: {list(squares_gen)}")`,
-    },
-    {
-      title: "정규표현식",
-      student: "1217채근영(chaeyn)",
-      code: `import re
+  },
+  {
+    id: 10,
+    title: "정규표현식",
+    student: "1217채근영(chaeyn)",
+    code: `import re
 
 text = "이메일: chaeyn@example.com, 전화번호: 010-1234-5678"
 
@@ -175,11 +182,12 @@ phones = re.findall(phone_pattern, text)
 
 print(f"이메일: {emails}")
 print(f"전화번호: {phones}")`,
-    },
-    {
-      title: "데이터 구조 활용",
-      student: "1217채근영(chaeyn)",
-      code: `from collections import Counter, defaultdict, deque
+  },
+  {
+    id: 11,
+    title: "데이터 구조 활용",
+    student: "1217채근영(chaeyn)",
+    code: `from collections import Counter, defaultdict, deque
 
 # Counter 사용
 text = "hello world"
@@ -197,11 +205,12 @@ queue = deque([1, 2, 3])
 queue.appendleft(0)
 queue.append(4)
 print(f"큐: {list(queue)}")`,
-    },
-    {
-      title: "날짜와 시간 처리",
-      student: "1217채근영(chaeyn)",
-      code: `from datetime import datetime, timedelta
+  },
+  {
+    id: 12,
+    title: "날짜와 시간 처리",
+    student: "1217채근영(chaeyn)",
+    code: `from datetime import datetime, timedelta
 import time
 
 # 현재 시간
@@ -217,11 +226,12 @@ start_time = time.time()
 time.sleep(0.1)  # 0.1초 대기
 end_time = time.time()
 print(f"실행 시간: {end_time - start_time:.4f}초")`,
-    },
-    {
-      title: "JSON 데이터 처리",
-      student: "1217채근영(chaeyn)",
-      code: `import json
+  },
+  {
+    id: 13,
+    title: "JSON 데이터 처리",
+    student: "1217채근영(chaeyn)",
+    code: `import json
 
 # 딕셔너리를 JSON으로 변환
 student_data = {
@@ -239,11 +249,12 @@ print(json_string)
 # JSON 문자열을 딕셔너리로 변환
 parsed_data = json.loads(json_string)
 print(f"\\n파싱된 이름: {parsed_data['name']}")`,
-    },
-    {
-      title: "웹 크롤링 기초",
-      student: "1217채근영(chaeyn)",
-      code: `import requests
+  },
+  {
+    id: 14,
+    title: "웹 크롤링 기초",
+    student: "1217채근영(chaeyn)",
+    code: `import requests
 from bs4 import BeautifulSoup
 
 def get_weather_info():
@@ -273,8 +284,12 @@ if weather:
     print(f"온도: {weather['temperature']}")
     print(f"습도: {weather['humidity']}")
     print(f"날씨: {weather['condition']}")`,
-    },
-  ];
+  },
+];
+
+const Code = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     hljs.highlightAll();
   }, []);
@@ -282,9 +297,12 @@ if weather:
     navigate(`/code/${codeId}`);
   };
   return (
-    <S.Container onClick={() => handleCodeClick(codes.id)}>
-      {codes.map((code, index) => (
-        <S.CodeContainer key={index}>
+    <S.Container>
+      {codes.map((code) => (
+        <S.CodeContainer
+          key={code.id}
+          onClick={() => handleCodeClick(code.id.toString())}
+        >
           <S.CodeBox>
             <S.CodePre>
               <S.CodeText className='language-python'>{code.code}</S.CodeText>
