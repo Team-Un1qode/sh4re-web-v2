@@ -338,6 +338,7 @@ const CodeDetail = () => {
             구조입니다.
           </S.CodeDescription>
         </S.CodeDescriptionBox>
+        <S.CopyButton>코드 복사</S.CopyButton>
       </S.InfoContainer>
     </S.Container>
   );

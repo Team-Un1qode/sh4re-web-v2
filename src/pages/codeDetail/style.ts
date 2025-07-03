@@ -71,7 +71,7 @@ export const CodeDescriptionBox = styled.div`
   gap: 1rem;
   width: 100%;
   height: 100%;
-  padding: 3rem;
+  padding: 3rem 2.2rem;
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.color.background};
 `;
@@ -82,10 +82,33 @@ export const CodeDescriptionTitle = styled.div`
 
 export const CodeDescription = styled.div`
   font-size: 1.3rem;
+  line-height: 1.3;
 `;
 
 export const Hr = styled.hr`
-  border: none;
   border-top: 1px solid ${({ theme }) => theme.color.placeholder};
   margin: 0.5rem 0;
+`;
+
+export const CopyButton = styled.button`
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.color.mainText};
+  background-color: ${({ theme }) => theme.color.buttonBlue};
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+`;
+
+export const CommentContainer = styled.div`
+  display: flex;
+  height: 100%;
+  width: 100%;
+`;
+
+export const CommentTitle = styled.div`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: ${({ theme }) => theme.color.mainText};
+  margin-bottom: 1rem;
 `;
