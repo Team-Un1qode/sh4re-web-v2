@@ -15,6 +15,7 @@ declare module "styled-components" {
       mainText: string;
       selectText: string;
       buttonText: string;
+      buttonBlue: string;
       placeholder: string;
       borderGray: string;
     };

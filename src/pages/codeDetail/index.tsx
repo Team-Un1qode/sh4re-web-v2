@@ -325,6 +325,20 @@ const CodeDetail = () => {
           <S.CodeTitle>{code.title}</S.CodeTitle>
           <S.StudentInfo>{code.student}</S.StudentInfo>
         </S.InfoTopBar>
+        <S.CodeDescriptionBox>
+          <S.CodeDescriptionTitle>코드 설명</S.CodeDescriptionTitle>
+          <S.Hr />
+          <S.CodeDescription>
+            이 코드는 미로 탐색 문제를 해결하는 프로그램입니다. 출발점 '0'에서
+            목표점 '1'까지 최소 거리(경로의 깊이)를 찾기 위해 BFS(너비 우선
+            탐색)를 사용합니다. 효율적으로, 큐를 이용한 BFS를 통해 최단 경로를
+            찾고 있으며, 키와 문을 고려하여 상태를 관리하는 방식이 특징입니다.
+            특징으로는, 방문 상태를 각각의 키 조합별로 저장하여 중복 탐색을
+            방지하는 점과, 문자 기반의 맵을 활용하여 다양한 조건을 처리하는
+            구조입니다.
+          </S.CodeDescription>
+        </S.CodeDescriptionBox>
+        <S.CopyButton>코드 복사</S.CopyButton>
       </S.InfoContainer>
     </S.Container>
   );

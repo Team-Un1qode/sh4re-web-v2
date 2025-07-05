@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
   const [grade, setGrade] = useState("");
-  const [classNumber, setClassNumber] = useState("");
+  const [classNo, setClassNo] = useState("");
 
   const {
     register,
@@ -21,9 +21,10 @@ const Register = () => {
   const onSubmit = async (data: RegisterFormInputs) => {
     await submit({
       ...data,
+      email: `${data.username}@dgsw.hs.kr`,
       grade: Number(grade),
-      classNumber: Number(classNumber),
-      studentNumber: Number(data.studentNumber),
+      classNo: Number(classNo),
+      studentNo: Number(data.studentNo),
     });
   };
 
@@ -41,6 +42,13 @@ const Register = () => {
             </S.RegisterSubTitle>
           </S.Header>
           <S.InputContainer>
+            <S.InputBox>
+              <S.InputIcon src='/login-user-icon.svg' />
+              <S.Input
+                placeholder='이름을 입력하세요.'
+                {...register("name", { required: "이름을 입력하세요." })}
+              />
+            </S.InputBox>
             <S.InputBox>
               <S.InputIcon src='/login-user-icon.svg' />
               <S.Input
@@ -95,12 +103,12 @@ const Register = () => {
                 onChange={(e) => setGrade(e.target.value)}
               />
               <ClassSelect
-                value={classNumber}
-                onChange={(e) => setClassNumber(e.target.value)}
+                value={classNo}
+                onChange={(e) => setClassNo(e.target.value)}
               />
               <S.SmallInput
                 placeholder='번호'
-                {...register("studentNumber", {
+                {...register("studentNo", {
                   required: "번호",
                 })}
               />

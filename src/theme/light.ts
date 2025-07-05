@@ -12,6 +12,7 @@ const light = {
     mainText: "#222222",
     selectText: "#959595",
     buttonText: "#FFFFFF",
+    buttonBlue: "#0095FF",
     placeholder: "rgba(22, 22, 22, 0.5)",
     borderGray: "rgba(0, 0, 0, 0.02)",
   },

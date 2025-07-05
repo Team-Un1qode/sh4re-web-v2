@@ -4,8 +4,9 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0 0 3rem;
+  padding: 0 3rem;
   height: 100%;
+  gap: 2rem;
   overflow-x: hidden;
   background-color: ${({ theme }) => theme.color.backgroundWhite};
 `;
@@ -39,7 +40,7 @@ export const CodeText = styled.code`
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  gap: 1rem;
   padding: 1rem;
   width: 50%;
   height: 80%;
@@ -51,7 +52,6 @@ export const InfoTopBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
 `;
 
 export const CodeTitle = styled.div`
@@ -63,5 +63,52 @@ export const CodeTitle = styled.div`
 export const StudentInfo = styled.div`
   font-size: 1.4rem;
   color: ${({ theme }) => theme.color.mainText};
-  margin-top: 0.5rem;
+`;
+
+export const CodeDescriptionBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  padding: 3rem 2.2rem;
+  box-sizing: border-box;
+  background-color: ${({ theme }) => theme.color.background};
+`;
+
+export const CodeDescriptionTitle = styled.div`
+  font-size: 1.5rem;
+`;
+
+export const CodeDescription = styled.div`
+  font-size: 1.3rem;
+  line-height: 1.3;
+`;
+
+export const Hr = styled.hr`
+  border-top: 1px solid ${({ theme }) => theme.color.placeholder};
+  margin: 0.5rem 0;
+`;
+
+export const CopyButton = styled.button`
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.color.mainText};
+  background-color: ${({ theme }) => theme.color.buttonBlue};
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+`;
+
+export const CommentContainer = styled.div`
+  display: flex;
+  height: 100%;
+  width: 100%;
+`;
+
+export const CommentTitle = styled.div`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: ${({ theme }) => theme.color.mainText};
+  margin-bottom: 1rem;
 `;

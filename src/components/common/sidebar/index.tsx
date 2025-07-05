@@ -7,6 +7,7 @@ import AnnouncementIcon from "../../../assets/icons/announcement.svg?react";
 import ProfileIcon from "../../../assets/icons/profile.svg?react";
 import ThemeToggle from "./ThemeToggle";
 import { useLocation, useNavigate } from "react-router-dom";
+import useAuthStore from "../../../store/useAuthStore";
 
 const sidebarItems = [
   { icon: HomeIcon, text: "홈", key: "/" },
@@ -21,6 +22,7 @@ const Sidebar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
   const navigate = useNavigate();
+  const { user } = useAuthStore();
   return (
     <S.Container>
       <S.Content>
@@ -46,7 +48,7 @@ const Sidebar = () => {
         <S.ProfileIcon>
           <ProfileIcon />
         </S.ProfileIcon>
-        {"채근영"}
+        {user?.name}
         <ThemeToggle />
       </S.Profile>
     </S.Container>
