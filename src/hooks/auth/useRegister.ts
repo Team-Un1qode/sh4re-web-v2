@@ -1,7 +1,7 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import type { RegisterFormInputs } from "../../types/auth/register";
+import sh4reCustomAxios from "../../axios/sh4reCustomAxios";
 
 const useRegister = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -14,10 +14,9 @@ const useRegister = () => {
       }
       setLoading(true);
 
-      const res = await axios.post(
-        `${import.meta.env.VITE_SERVER_URL}/api/auth/signup`,
-        data
-      );
+      const res = await sh4reCustomAxios.post(`/api/auth/register`, data, {
+        withCredentials: true,
+      });
 
       if (res) {
         alert(`${data.username}님 환영합니다!`);
