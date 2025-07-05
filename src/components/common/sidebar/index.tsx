@@ -5,9 +5,9 @@ import CodeIcon from "../../../assets/icons/code.svg?react";
 import TaskIcon from "../../../assets/icons/task.svg?react";
 import AnnouncementIcon from "../../../assets/icons/announcement.svg?react";
 import ProfileIcon from "../../../assets/icons/profile.svg?react";
-import ThemeToggle from "./ThemeToggle";
 import { useLocation, useNavigate } from "react-router-dom";
-import useAuthStore from "../../../store/useAuthStore";
+import { Suspense } from "react";
+import SideBarAccount from "./account";
 
 const sidebarItems = [
   { icon: HomeIcon, text: "홈", key: "/" },
@@ -22,7 +22,6 @@ const Sidebar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
   const navigate = useNavigate();
-  const { user } = useAuthStore();
   return (
     <S.Container>
       <S.Content>
@@ -44,13 +43,13 @@ const Sidebar = () => {
           ))}
         </S.List>
       </S.Content>
-      <S.Profile>
-        <S.ProfileIcon>
-          <ProfileIcon />
-        </S.ProfileIcon>
-        {user?.name}
-        <ThemeToggle />
-      </S.Profile>
+      <Suspense
+        fallback={
+          <h1 style={{ color: "white", fontSize: "100px" }}>Loading...</h1>
+        }
+      >
+        <SideBarAccount />
+      </Suspense>
     </S.Container>
   );
 };

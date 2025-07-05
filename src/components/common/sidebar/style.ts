@@ -43,17 +43,6 @@ export const Elem = styled.div<{ $isselected: boolean }>`
     $isselected ? theme.color.selectedWhite : "transparent"};
 `;
 
-export const ProfileIcon = styled.div`
-  width: 1.75rem;
-  display: flex;
-  align-items: center;
-  & > svg {
-    width: 100%;
-    height: 100%;
-    fill: ${({ theme }) => theme.color.mainBlue};
-  }
-`;
-
 export const Icon = styled.div`
   width: 1.5rem;
   height: 1.25rem;
@@ -70,14 +59,4 @@ export const Icon = styled.div`
 export const ElemText = styled.div`
   font-size: 1.25rem;
   font-weight: 600;
-`;
-
-export const Profile = styled(ElemText)`
-  padding: 2rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  gap: 1.5rem;
-  color: ${({ theme }) => theme.color.mainText};
 `;

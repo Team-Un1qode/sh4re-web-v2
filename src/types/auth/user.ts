@@ -20,3 +20,11 @@ export interface User {
   role: UserRole;
   school: School;
 }
+
+export interface MyInfoResponse {
+  data: {
+    data: {
+      me: User;
+    };
+  };
+}
