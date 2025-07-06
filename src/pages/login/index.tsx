@@ -18,15 +18,11 @@ const Login = () => {
 
   return (
     <S.Container>
-      <S.BackgroundWrapper>
-        <S.Background />
-      </S.BackgroundWrapper>
       <S.LoginContainer>
+        <S.Header>
+          <img src='/sh4reLogo.svg' alt='sh4re logo' />
+        </S.Header>
         <S.LoginBox onSubmit={handleSubmit(onSubmit)} autoComplete='none'>
-          <S.Header>
-            <S.LoginTitle>로그인</S.LoginTitle>
-            <S.LoginSubTitle>서비스를 시작하려면 로그인하세요.</S.LoginSubTitle>
-          </S.Header>
           <S.InputContainer>
             <S.InputBox>
               <S.InputIcon src='/login-user-icon.svg'></S.InputIcon>
@@ -37,7 +33,7 @@ const Login = () => {
             </S.InputBox>
             {errors.username && (
               <span
-                style={{ color: "red", fontSize: "0.85rem", marginLeft: "5px" }}
+                style={{ color: "red", fontSize: "12px", marginLeft: "5px" }}
               >
                 {errors.username.message}
               </span>
@@ -54,23 +50,32 @@ const Login = () => {
             </S.InputBox>
             {errors.username && (
               <span
-                style={{ color: "red", fontSize: "0.85rem", marginLeft: "5px" }}
+                style={{ color: "red", fontSize: "12px", marginLeft: "5px" }}
               >
                 {errors.password?.message}
               </span>
             )}
           </S.InputContainer>
-          <S.LoginButton>로그인</S.LoginButton>
+          <S.LoginButtonContainer>
+            <S.LoginButton>로그인</S.LoginButton>
+            <S.GoogleLoginButton>
+              <img src='/google-logo.svg' alt='google logo' />
+              구글로 로그인
+            </S.GoogleLoginButton>
+          </S.LoginButtonContainer>
           <S.AuthBottomContainer>
-            <S.AccountPrompt>
+            <S.AccountSupport>
               아직 계정이 없으신가요?
               <span>
                 <Link to='/register'>회원가입</Link>
               </span>
-            </S.AccountPrompt>
-            <S.ForgotPasswordLink href='/forgot-password'>
+            </S.AccountSupport>
+            <S.AccountSupport>
               비밀번호를 잊어버리셨나요?
-            </S.ForgotPasswordLink>
+              <span>
+                <Link to='/forgot-password'>비밀번호 찾기</Link>
+              </span>
+            </S.AccountSupport>
           </S.AuthBottomContainer>
         </S.LoginBox>
       </S.LoginContainer>
