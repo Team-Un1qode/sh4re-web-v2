@@ -4,7 +4,7 @@ import {
   type UseQueryResult,
 } from "@tanstack/react-query";
 import type { AxiosError } from "axios";
-import { getMyInfo } from "../../axios/user";
+import { getMyInfo } from "../../api/user";
 import type { MyInfoResponse } from "../../types/auth/user";
 import { QUERY_KEYS } from "../queryKey";
 
