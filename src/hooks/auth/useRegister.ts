@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import type { RegisterFormInputs } from "../../types/auth/register";
-import sh4reCustomAxios from "../../axios/sh4reCustomAxios";
+import sh4reCustomAxios from "../../api/sh4reCustomAxios";
 
 const useRegister = () => {
   const [loading, setLoading] = useState<boolean>(false);

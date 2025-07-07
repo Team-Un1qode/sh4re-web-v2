@@ -13,7 +13,11 @@ const options = Array.from({ length: 14 }, (_, i) => ({
 
 const ClassSelect = ({ value, onChange }: ClassSelectProps) => {
   return (
-    <S.Select value={value} onChange={onChange}>
+    <S.Select
+      value={value}
+      onChange={onChange}
+      $isSelected={!value || value === ""}
+    >
       <option value=''>반</option>
       {options.map((option) => (
         <option key={option.value} value={option.value}>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,37 +8,20 @@ export const Container = styled.div`
   height: 100vh;
 `;
 
-export const BackgroundWrapper = styled.div`
+export const Container = styled.div`
   display: flex;
-  justify-content: stretch;
-  align-items: stretch;
-  flex: 1;
-  height: 100%;
-  box-sizing: border-box;
-  border-radius: 20px;
-  padding: 20px 0 20px 20px;
-  @media screen and (max-width: 1024px) {
-    display: none;
-  }
-`;
-
-export const Background = styled.div`
-  background-image: url("/login-background-img.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 75%;
 `;
 
 export const LoginContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
   width: 400px;
-  height: 100%;
-  padding: 0 150px;
+  height: 30vh;
   @media screen and (max-width: 768px) {
     padding: 0 50px;
   }
@@ -52,25 +35,16 @@ export const LoginBox = styled.form`
   gap: 30px;
 `;
 
-export const Header = styled.div`
+export const Sh4reLogo = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
   cursor: default;
-`;
-
-export const LoginTitle = styled.p`
-  font-size: 22px;
-  color: ${({ theme }) => theme.color.mainText};
-  font-weight: 500;
-  user-select: none;
-`;
-
-export const LoginSubTitle = styled.p`
-  font-size: 14px;
-  color: ${({ theme }) => theme.color.placeholder};
-  font-weight: 400;
-  user-select: none;
+  img {
+    width: 20rem;
+    height: 8rem;
+    flex-shrink: 0;
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -99,7 +73,7 @@ export const InputIcon = styled.img`
 
 export const Input = styled.input`
   width: 100%;
-  height: 50px;
+  height: 46px;
   border: 1px solid ${({ theme }) => theme.color.borderGray};
   box-sizing: border-box;
   font-weight: 350;
@@ -116,18 +90,47 @@ export const Input = styled.input`
   }
 `;
 
+export const LoginButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  user-select: none;
+`;
+
 export const LoginButton = styled.button`
   width: 100%;
-  height: 50px;
+  height: 40px;
   box-sizing: border-box;
   border-radius: 10px;
   border: none;
   background-color: ${({ theme }) => theme.color.buttonBlack};
   color: ${({ theme }) => theme.color.buttonText};
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
   user-select: none;
+`;
+
+export const GoogleLoginButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4.8px;
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid ${({ theme }) => theme.color.placeholder};
+  background-color: ${({ theme }) => theme.color.backgroundWhite};
+  color: ${({ theme }) => theme.color.mainText};
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  img {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 export const AuthBottomContainer = styled.div`
@@ -140,7 +143,7 @@ export const AuthBottomContainer = styled.div`
   margin-top: 12px;
 `;
 
-export const AccountPrompt = styled.div`
+export const AccountSupport = styled.div`
   font-size: 12px;
   color: ${({ theme }) => theme.color.placeholder};
   user-select: none;
@@ -152,12 +155,4 @@ export const AccountPrompt = styled.div`
       font-weight: 500;
     }
   }
-`;
-
-export const ForgotPasswordLink = styled.a`
-  font-size: 12px;
-  color: ${({ theme }) => theme.color.placeholder};
-  cursor: pointer;
-  text-decoration: none;
-  user-select: none;
 `;
