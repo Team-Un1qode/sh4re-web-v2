@@ -23,8 +23,6 @@ export interface User {
 
 export interface MyInfoResponse {
   data: {
-    data: {
-      me: User;
-    };
+    me: User;
   };
 }
