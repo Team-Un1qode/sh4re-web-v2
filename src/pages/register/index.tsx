@@ -192,6 +192,7 @@ const Register = () => {
         <S.SmallInput
           placeholder='번호'
           type='number'
+          onWheel={(e) => (e.target as HTMLInputElement).blur()}
           {...register("studentNo", {
             required: "학번을 입력하세요.",
             min: {

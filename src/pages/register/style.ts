@@ -60,26 +60,20 @@ export const InputBox = styled.label`
   position: relative;
   user-select: none;
   border: 1px solid ${({ theme }) => theme.color.placeholder};
+  box-sizing: border-box;
   border-radius: 10px;
-`;
-
-export const SmallInputBox = styled.label`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  user-select: none;
 `;
 
 export const InputIcon = styled.img`
   position: absolute;
   left: 15px;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
   user-select: none;
 `;
 
 export const Input = styled.input`
   width: 100%;
-  height: 50px;
+  height: 46px;
   border: 1px solid ${({ theme }) => theme.color.borderGray};
   box-sizing: border-box;
   font-weight: 350;
@@ -94,6 +88,13 @@ export const Input = styled.input`
   &:focus {
     outline: 1px solid ${({ theme }) => theme.color.mainBlue};
   }
+`;
+
+export const SmallInputBox = styled.label`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
 `;
 
 export const SmallInput = styled.input`
@@ -115,13 +116,22 @@ export const SmallInput = styled.input`
   &:focus {
     outline: 1px solid ${({ theme }) => theme.color.mainBlue};
   }
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  &[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+  }
 `;
 
 export const Select = styled.select`
   flex: 1;
   height: 50px;
   width: 100%;
-  height: 50px;
+  height: 46px;
   border: 1px solid ${({ theme }) => theme.color.placeholder};
   box-sizing: border-box;
   font-weight: 350;
@@ -203,4 +213,11 @@ export const AccountSupport = styled.div`
       font-weight: 500;
     }
   }
+`;
+
+export const PreviousButton = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  color: ${({ theme }) => theme.color.placeholder};
+  cursor: pointer;
 `;
