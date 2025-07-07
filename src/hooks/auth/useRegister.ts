@@ -34,6 +34,9 @@ const useRegister = () => {
           case "AUTHENTICATION_FAILED":
             alert("회원가입 처리 중 인증에 실패했습니다.");
             break;
+          case "SCHOOL_NOT_FOUND":
+            alert("해당 학교를 찾을 수 없습니다. 학교 정보를 확인해주세요.");
+            break;
           case "INVALID_ARGUMENT":
             alert(
               "입력값이 올바르지 않습니다. 모든 필드를 올바르게 입력했는지 확인해주세요."
