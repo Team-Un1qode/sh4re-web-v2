@@ -144,7 +144,7 @@ export const AuthBottomContainer = styled.div`
 `;
 
 export const AccountSupport = styled.div`
-  font-size: 1rem;
+  font-size: 12px;
   color: ${({ theme }) => theme.color.placeholder};
   user-select: none;
   span {

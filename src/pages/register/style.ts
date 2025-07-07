@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import type { SelectProps } from "../../types/select/selectProps";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -127,7 +128,7 @@ export const SmallInput = styled.input`
   }
 `;
 
-export const Select = styled.select`
+export const Select = styled.select<SelectProps>`
   flex: 1;
   height: 50px;
   width: 100%;
@@ -138,11 +139,9 @@ export const Select = styled.select`
   padding: 0 0 0 20px;
   border-radius: 10px;
   background-color: ${({ theme }) => theme.color.backgroundWhite};
-  color: ${({ theme }) => theme.color.mainText};
+  color: ${({ theme, $isSelected }) =>
+    $isSelected ? theme.color.placeholder : theme.color.mainText};
   user-select: none;
-  &::placeholder {
-    color: ${({ theme }) => theme.color.placeholder};
-  }
   &:focus {
     outline: 1px solid ${({ theme }) => theme.color.mainBlue};
   }
@@ -202,7 +201,7 @@ export const AuthBottomContainer = styled.div`
 `;
 
 export const AccountSupport = styled.div`
-  font-size: 1rem;
+  font-size: 12px;
   color: ${({ theme }) => theme.color.placeholder};
   user-select: none;
   span {
@@ -216,6 +215,7 @@ export const AccountSupport = styled.div`
 `;
 
 export const PreviousButton = styled.div`
+  font-size: 12px;
   display: flex;
   justify-content: flex-end;
   color: ${({ theme }) => theme.color.placeholder};

@@ -14,7 +14,11 @@ const options = [
 
 const GradeSelect = ({ value, onChange }: GradeSelectProps) => {
   return (
-    <S.Select value={value} onChange={onChange}>
+    <S.Select
+      value={value}
+      onChange={onChange}
+      $isSelected={!value || value === ""}
+    >
       <option value=''>학년</option>
       {options.map((option) => (
         <option key={option.value} value={option.value}>
