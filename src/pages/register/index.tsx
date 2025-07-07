@@ -8,124 +8,174 @@ import ClassSelect from "../../components/common/auth/registerSelect/classSelect
 import { Link } from "react-router-dom";
 
 const Register = () => {
-  const [grade, setGrade] = useState("");
-  const [classNo, setClassNo] = useState("");
+  const [step, setStep] = useState(1);
 
   const {
     register,
     handleSubmit,
+    watch,
+    setValue,
     formState: { errors },
-  } = useForm<RegisterFormInputs>();
+  } = useForm<RegisterFormInputs>({
+    defaultValues: {
+      username: "",
+      email: "",
+      password: "",
+      passwordConfirm: "",
+      schoolCode: "",
+      name: "",
+      classNo: 0,
+      studentNo: 0,
+      grade: 0,
+    },
+  });
+
   const { submit } = useRegister();
 
+  const gradeValue = watch("grade");
+  const classNoValue = watch("classNo");
+
+  const nextStep = () => setStep(2);
+  const previousStep = () => setStep(1);
+
   const onSubmit = async (data: RegisterFormInputs) => {
-    await submit({
-      ...data,
-      email: `${data.username}@dgsw.hs.kr`,
-      grade: Number(grade),
-      classNo: Number(classNo),
-      studentNo: Number(data.studentNo),
-    });
+    console.log("submitData", data);
+    await submit(data);
   };
 
+  const renderStep1 = () => (
+    <S.InputContainer>
+      <S.InputBox>
+        <S.InputIcon src='/login-user-icon.svg' />
+        <S.Input
+          placeholder='아이디를 입력하세요.'
+          {...register("username", {
+            required: "아이디를 입력하세요.",
+          })}
+        />
+      </S.InputBox>
+      <S.InputBox>
+        <S.InputIcon src='/email-icon.svg' />
+        <S.Input
+          placeholder='이메일을 입력하세요.'
+          type='email'
+          {...register("email", {
+            required: "이메일을 입력하세요.",
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "올바른 이메일 형식을 입력하세요.",
+            },
+          })}
+        />
+      </S.InputBox>
+      <S.InputBox>
+        <S.InputIcon src='/login-password-icon.svg' />
+        <S.Input
+          placeholder='비밀번호를 입력하세요.'
+          type='password'
+          {...register("password", {
+            required: "비밀번호를 입력하세요.",
+            minLength: {
+              value: 8,
+              message: "비밀번호는 최소 8자 이상이어야 합니다.",
+            },
+          })}
+        />
+      </S.InputBox>
+      <S.InputBox>
+        <S.InputIcon src='/login-password-icon.svg' />
+        <S.Input
+          placeholder='비밀번호 확인'
+          type='password'
+          {...register("passwordConfirm", {
+            required: "비밀번호를 다시 입력하세요.",
+            validate: (value) =>
+              value === watch("password") || "비밀번호가 일치하지 않습니다.",
+          })}
+        />
+      </S.InputBox>
+      <S.RegisterButton type='button' onClick={nextStep}>
+        다음
+      </S.RegisterButton>
+    </S.InputContainer>
+  );
+
+  const renderStep2 = () => (
+    <S.InputContainer>
+      <S.InputBox>
+        <S.InputIcon src='/login-user-icon.svg' />
+        <S.Input
+          placeholder='이름을 입력하세요.'
+          {...register("name", { required: "이름을 입력하세요." })}
+        />
+      </S.InputBox>
+      <S.InputBox>
+        <S.InputIcon src='/register-school-icon.svg' />
+        <S.Input
+          placeholder='학교코드를 입력하세요.'
+          type='text'
+          {...register("schoolCode", {
+            required: "학교코드를 입력하세요.",
+          })}
+        />
+      </S.InputBox>
+      <S.SmallInputBox>
+        <GradeSelect
+          value={String(gradeValue || "")}
+          onChange={(e) => setValue("grade", Number(e.target.value))}
+        />
+        <ClassSelect
+          value={String(classNoValue || "")}
+          onChange={(e) => setValue("classNo", Number(e.target.value))}
+        />
+        <S.SmallInput
+          placeholder='번호'
+          type='number'
+          {...register("studentNo", {
+            required: "학번을 입력하세요.",
+            min: {
+              value: 1,
+              message: "올바른 학번을 입력하세요.",
+            },
+          })}
+        />
+      </S.SmallInputBox>
+      <S.RegisterButton type='submit'>회원가입</S.RegisterButton>
+    </S.InputContainer>
+  );
+
   return (
-    <S.Container>
-      <S.BackgroundWrapper>
-        <S.Background />
-      </S.BackgroundWrapper>
-      <S.RegisterContainer>
-        <S.RegisterBox onSubmit={handleSubmit(onSubmit)} autoComplete='off'>
-          <S.Header>
-            <S.RegisterTitle>회원가입</S.RegisterTitle>
-            <S.RegisterSubTitle>
-              서비스를 시작하려면 회원가입하세요.
-            </S.RegisterSubTitle>
-          </S.Header>
-          <S.InputContainer>
-            <S.InputBox>
-              <S.InputIcon src='/login-user-icon.svg' />
-              <S.Input
-                placeholder='이름을 입력하세요.'
-                {...register("name", { required: "이름을 입력하세요." })}
-              />
-            </S.InputBox>
-            <S.InputBox>
-              <S.InputIcon src='/login-user-icon.svg' />
-              <S.Input
-                placeholder='아이디를 입력하세요.'
-                {...register("username", { required: "아이디를 입력하세요." })}
-              />
-            </S.InputBox>
-            {errors.username && (
-              <span
-                style={{ color: "red", fontSize: "0.85rem", marginLeft: "5px" }}
-              >
-                {errors.username.message}
-              </span>
-            )}
-            <S.InputBox>
-              <S.InputIcon src='/login-password-icon.svg' />
-              <S.Input
-                placeholder='비밀번호를 입력하세요.'
-                type='password'
-                {...register("password", {
-                  required: "비밀번호를 입력하세요.",
-                })}
-              />
-            </S.InputBox>
-            {errors.password && (
-              <span
-                style={{ color: "red", fontSize: "0.85rem", marginLeft: "5px" }}
-              >
-                {errors.password.message}
-              </span>
-            )}
-            <S.InputBox>
-              <S.InputIcon src='/register-school-icon.svg' />
-              <S.Input
-                placeholder='학교코드'
-                type='text'
-                {...register("schoolCode", {
-                  required: "학교코드를 입력하세요.",
-                })}
-              />
-            </S.InputBox>
-            {errors.schoolCode && (
-              <span
-                style={{ color: "red", fontSize: "0.85rem", marginLeft: "5px" }}
-              >
-                {errors.schoolCode.message}
-              </span>
-            )}
-            <S.SmallInputBox>
-              <GradeSelect
-                value={grade}
-                onChange={(e) => setGrade(e.target.value)}
-              />
-              <ClassSelect
-                value={classNo}
-                onChange={(e) => setClassNo(e.target.value)}
-              />
-              <S.SmallInput
-                placeholder='번호'
-                {...register("studentNo", {
-                  required: "번호",
-                })}
-              />
-            </S.SmallInputBox>
-          </S.InputContainer>
-          <S.RegisterButton>회원가입</S.RegisterButton>
-          <S.AccountPromptContainer>
-            <S.AccountPrompt>
-              계정이 있으신가요?
-              <span>
-                <Link to='/login'>로그인</Link>
-              </span>
-            </S.AccountPrompt>
-          </S.AccountPromptContainer>
-        </S.RegisterBox>
-      </S.RegisterContainer>
-    </S.Container>
+    <S.Wrapper>
+      <S.Container>
+        <S.Sh4reLogo>
+          <img src='/sh4reLogo.svg' alt='sh4re logo' />
+        </S.Sh4reLogo>
+        <S.RegisterContainer>
+          <S.RegisterBox
+            as='form'
+            autoComplete='off'
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            {step === 1 ? renderStep1() : renderStep2()}
+
+            <S.AuthBottomContainer>
+              <S.AccountSupport>
+                계정이 있으신가요?
+                <span>
+                  <Link to='/login'>로그인</Link>
+                </span>
+              </S.AccountSupport>
+            </S.AuthBottomContainer>
+          </S.RegisterBox>
+
+          {step === 2 && (
+            <button type='button' onClick={previousStep}>
+              이전
+            </button>
+          )}
+        </S.RegisterContainer>
+      </S.Container>
+    </S.Wrapper>
   );
 };
 
