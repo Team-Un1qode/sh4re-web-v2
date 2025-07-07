@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,15 +8,20 @@ export const Container = styled.div`
   height: 100vh;
 `;
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 75%;
+`;
+
 export const LoginContainer = styled.div`
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  gap: 100px;
-  align-items: center;
+  justify-content: center;
   width: 400px;
-  height: 100%;
-  padding: 0 150px;
+  height: 30vh;
   @media screen and (max-width: 768px) {
     padding: 0 50px;
   }
@@ -30,14 +35,14 @@ export const LoginBox = styled.form`
   gap: 30px;
 `;
 
-export const Header = styled.div`
+export const Sh4reLogo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: default;
   img {
-    width: 19.875rem;
-    height: 7.73438rem;
+    width: 20rem;
+    height: 8rem;
     flex-shrink: 0;
   }
 `;
