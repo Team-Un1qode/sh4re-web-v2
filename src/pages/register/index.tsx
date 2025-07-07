@@ -1,6 +1,6 @@
 import * as S from "./style.ts";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useRegister from "../../hooks/auth/useRegister.ts";
 import type { RegisterFormInputs } from "../../types/auth/register.ts";
 import GradeSelect from "../../components/common/auth/registerSelect/gradeSelect/index.tsx";
@@ -9,39 +9,100 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
   const [step, setStep] = useState(1);
-
-  const {
-    register,
-    handleSubmit,
-    watch,
-    setValue,
-    formState: { errors },
-  } = useForm<RegisterFormInputs>({
-    defaultValues: {
-      username: "",
-      email: "",
-      password: "",
-      passwordConfirm: "",
-      schoolCode: "",
-      name: "",
-      classNo: 0,
-      studentNo: 0,
-      grade: 0,
-    },
+  // STEP1, 2 데이터를 별도로 저장
+  const [step1Data, setStep1Data] = useState({
+    username: "",
+    email: "",
+    password: "",
+    passwordConfirm: "",
   });
+
+  const [step2Data, setStep2Data] = useState({
+    name: "",
+    schoolCode: "",
+    grade: null as number | null,
+    classNo: null as number | null,
+    studentNo: null as number | null, // 현재는 null, number or null 값으로 변경 가능
+  });
+
+  const { register, handleSubmit, watch, setValue } =
+    useForm<RegisterFormInputs>({
+      defaultValues: {
+        username: "",
+        email: "",
+        password: "",
+        passwordConfirm: "",
+        schoolCode: "",
+        name: "",
+        classNo: null,
+        studentNo: null,
+        grade: null,
+      },
+    });
 
   const { submit } = useRegister();
 
   const gradeValue = watch("grade");
   const classNoValue = watch("classNo");
 
-  const nextStep = () => setStep(2);
-  const previousStep = () => setStep(1);
+  const nextStep = () => {
+    setStep1Data({
+      username: watch("username"),
+      email: watch("email"),
+      password: watch("password"),
+      passwordConfirm: watch("passwordConfirm"),
+    });
+
+    // step2로 이동하면서 저장된 step2 데이터 복원
+    setValue("name", step2Data.name);
+    setValue("schoolCode", step2Data.schoolCode);
+    setValue("grade", step2Data.grade);
+    setValue("classNo", step2Data.classNo);
+    setValue("studentNo", step2Data.studentNo);
+
+    setStep(2);
+  };
+
+  const previousStep = () => {
+    // step2 데이터 저장
+    setStep2Data({
+      name: watch("name"),
+      schoolCode: watch("schoolCode"),
+      grade: watch("grade"),
+      classNo: watch("classNo"),
+      studentNo: watch("studentNo"),
+    });
+
+    // step1으로 돌아가면서 저장된 데이터 복원
+    setValue("username", step1Data.username);
+    setValue("email", step1Data.email);
+    setValue("password", step1Data.password);
+    setValue("passwordConfirm", step1Data.passwordConfirm);
+
+    setStep(1);
+  };
 
   const onSubmit = async (data: RegisterFormInputs) => {
-    console.log("submitData", data);
     await submit(data);
   };
+
+  // 컴포넌트 마운트 시 초기화
+  useEffect(() => {
+    if (step === 1) {
+      // step1 필드들을 저장된 데이터로 설정
+      setValue("username", step1Data.username);
+      setValue("email", step1Data.email);
+      setValue("password", step1Data.password);
+      setValue("passwordConfirm", step1Data.passwordConfirm);
+    } else if (step === 2) {
+      // step2 필드들을 저장된 데이터로 설정
+      setValue("name", step2Data.name);
+      setValue("schoolCode", step2Data.schoolCode);
+      setValue("grade", step2Data.grade);
+      setValue("classNo", step2Data.classNo);
+      setValue("studentNo", step2Data.studentNo);
+    }
+  }, [step, setValue, step1Data, step2Data]);
 
   const renderStep1 = () => (
     <S.InputContainer>
@@ -141,6 +202,7 @@ const Register = () => {
         />
       </S.SmallInputBox>
       <S.RegisterButton type='submit'>회원가입</S.RegisterButton>
+      <S.PreviousButton onClick={previousStep}>이전으로</S.PreviousButton>
     </S.InputContainer>
   );
 
@@ -157,7 +219,6 @@ const Register = () => {
             onSubmit={handleSubmit(onSubmit)}
           >
             {step === 1 ? renderStep1() : renderStep2()}
-
             <S.AuthBottomContainer>
               <S.AccountSupport>
                 계정이 있으신가요?
@@ -167,12 +228,6 @@ const Register = () => {
               </S.AccountSupport>
             </S.AuthBottomContainer>
           </S.RegisterBox>
-
-          {step === 2 && (
-            <button type='button' onClick={previousStep}>
-              이전
-            </button>
-          )}
         </S.RegisterContainer>
       </S.Container>
     </S.Wrapper>

@@ -5,7 +5,7 @@ export interface RegisterFormInputs {
   passwordConfirm: string;
   schoolCode: string;
   email: string;
-  classNo: number;
-  studentNo: number;
-  grade: number;
+  classNo: number | null;
+  studentNo: number | null;
+  grade: number | null;
 }
