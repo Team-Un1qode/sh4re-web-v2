@@ -6,10 +6,7 @@ import { Info, CheckCircle, AlertCircle, AlertTriangle, X } from "lucide-react";
 type ToastType = "info" | "success" | "error" | "warning";
 
 const ToastContainer: React.FC = () => {
-  const { toasts, removeToast } = useToastContext();
-  const [closingToasts, setClosingToasts] = React.useState<Set<string>>(
-    new Set()
-  );
+  const { toasts, closingToasts, removeToast } = useToastContext();
 
   const iconMap: Record<ToastType, React.FC<{ size?: number }>> = {
     info: Info,
@@ -19,18 +16,7 @@ const ToastContainer: React.FC = () => {
   };
 
   const handleCloseToast = (toastId: string) => {
-    // 1. 닫히는 상태로 설정
-    setClosingToasts((prev) => new Set(prev).add(toastId));
-
-    // 2. 애니메이션 지속 시간 후 실제 제거
-    setTimeout(() => {
-      removeToast(toastId);
-      setClosingToasts((prev) => {
-        const newSet = new Set(prev);
-        newSet.delete(toastId);
-        return newSet;
-      });
-    }, 250);
+    removeToast(toastId);
   };
 
   if (toasts.length === 0) return null;

@@ -48,7 +48,7 @@ export const ToastItem = styled.div<{
   height: 40px;
 
   animation: ${({ $isClosing }) => ($isClosing ? slideOut : slideIn)} 0.2s
-    ease-out;
+    ease-out forwards;
 
   background-color: ${({ type }) => {
     switch (type) {
