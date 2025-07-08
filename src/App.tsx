@@ -1,6 +1,8 @@
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./styles/GlobalStyles";
 import { ThemeProviderCustom, useTheme, themes } from "./theme/themeContext";
+import { ToastProvider } from "./contexts/ToastContext";
+import ToastContainer from "./components/common/toast";
 import Router from "./Router";
 
 function ThemedApp() {
@@ -8,7 +10,10 @@ function ThemedApp() {
   return (
     <ThemeProvider theme={themes[theme]}>
       <GlobalStyles />
-      <Router />
+      <ToastProvider>
+        <Router />
+        <ToastContainer />
+      </ToastProvider>
     </ThemeProvider>
   );
 }
