@@ -4,9 +4,37 @@ import {
   type UseSuspenseQueryResult,
 } from "@tanstack/react-query";
 import type { AxiosError } from "axios";
-import { getMyInfo } from "@sh4re/api";
-import type { MyInfoResponse } from "@sh4re/types";
+// Copy the interfaces locally for now
+export interface User {
+  username: string;
+  name: string;
+  email: string;
+  grade: number;
+  classNo: number;
+  studentNo: number;
+  role: string;
+  school: {
+    name: string;
+    code: string;
+  };
+}
+
+export interface MyInfoResponse {
+  data: {
+    me: User;
+  };
+}
+
+import sh4reCustomAxios from "../../../api/src/sh4reCustomAxios";
 import { QUERY_KEYS } from "../queryKey";
+
+export const getMyInfo = async () => {
+  return (
+    await sh4reCustomAxios.get<MyInfoResponse>("/user/me", {
+      withCredentials: true,
+    })
+  ).data;
+};
 
 export const useGetMyInfoQuery = (
   options?: Partial<UseSuspenseQueryOptions<MyInfoResponse, AxiosError>>

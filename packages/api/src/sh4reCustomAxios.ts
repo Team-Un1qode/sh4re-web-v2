@@ -7,7 +7,7 @@ import axios, {
 
 const ACCESS_TOKEN_KEY = "accessToken";
 
-const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+const SERVER_URL = "http://localhost:3000"; // Default fallback
 
 const getAccessToken = () => localStorage.getItem(ACCESS_TOKEN_KEY);
 

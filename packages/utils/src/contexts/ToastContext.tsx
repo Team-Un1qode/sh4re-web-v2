@@ -1,7 +1,7 @@
 import React, { createContext, useContext } from "react";
 import type { ReactNode } from "react";
 import { useToast } from "../hooks/useToast";
-import type { ToastContextType } from "@sh4re/types";
+import type { ToastContextType } from "../../../types/src/toast";
 
 const ToastContext = createContext<ToastContextType | undefined>(undefined);
 

@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "../pages/login";
 import Register from "../pages/register";
 import Home from "../pages/home";
-import { SidebarLayout } from "@sh4re/ui";
+import SidebarLayout from "../components/layouts/SidebarLayout";
 import Handouts from "../pages/handouts";
 import Code from "../pages/code";
 import CodeDetail from "../pages/codeDetail";

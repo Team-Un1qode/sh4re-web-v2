@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import type { Toast } from "@sh4re/types";
+import type { Toast } from "../../../types/src/toast";
 
 export const useToast = () => {
   const [toasts, setToasts] = useState<Toast[]>([]);

@@ -1,54 +1,122 @@
-# React + TypeScript + Vite
+# Sh4re Monorepo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A workspace-based monorepo containing the student and teacher applications for the Sh4re platform.
 
-Currently, two official plugins are available:
+## Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+├── package.json (workspace root)
+├── apps/
+│   ├── student/    # Student application (sh4re.com)
+│   └── teacher/    # Teacher application (teacher.sh4re.com)
+├── packages/
+│   ├── constants/  # Shared constants and configuration
+│   ├── api/        # API utilities (in development)
+│   ├── types/      # Shared TypeScript types (in development)
+│   ├── theme/      # Theme system (in development)
+│   ├── ui/         # Common UI components (in development)
+│   └── utils/      # Utility functions (in development)
+└── tools/
+    ├── eslint-config/  # Shared ESLint configuration
+    └── tsconfig/       # Shared TypeScript configuration
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
+- Node.js 18+ 
+- npm 9+
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Installation
+```bash
+npm install
 ```
+
+### Development
+
+Run student app:
+```bash
+npm run dev:student
+```
+
+Run teacher app:
+```bash
+npm run dev:teacher
+```
+
+### Building
+
+Build both apps:
+```bash
+npm run build:all
+```
+
+Build individual apps:
+```bash
+npm run build:student
+npm run build:teacher
+```
+
+## Apps
+
+### Student App (`apps/student/`)
+- **Domain**: `sh4re.com`
+- **Purpose**: Student-focused interface for viewing assignments, code submissions, and course materials
+- **Features**: 
+  - View assignments and due dates
+  - Submit and view code
+  - Access course materials
+  - Check announcements
+
+### Teacher App (`apps/teacher/`)
+- **Domain**: `teacher.sh4re.com` 
+- **Purpose**: Teacher-focused interface for managing classes and student work
+- **Features**:
+  - Dashboard with class overview
+  - Manage assignments and announcements
+  - Review student code submissions
+  - Upload and organize course materials
+
+## Shared Packages
+
+### `@sh4re/constants`
+Shared constants and configuration values used across both applications.
+
+### Future Packages (In Development)
+- `@sh4re/api` - API clients and utilities
+- `@sh4re/types` - Shared TypeScript type definitions
+- `@sh4re/theme` - Theme system and styled components
+- `@sh4re/ui` - Reusable UI components
+- `@sh4re/utils` - Utility functions and custom hooks
+
+## Multi-Tenancy & Domain Separation
+
+The workspace is designed to support:
+- **Domain-based routing**: Different domains for student vs teacher interfaces
+- **School-specific theming**: Configurable themes per educational institution
+- **Independent deployment**: Each app can be deployed separately
+- **Shared business logic**: Common functionality through workspace packages
+
+## Development Workflow
+
+1. **Independent Development**: Each app can be developed independently
+2. **Shared Code**: Common functionality is extracted to packages as needed
+3. **Type Safety**: TypeScript ensures type safety across the workspace
+4. **Consistent Tooling**: Shared ESLint and TypeScript configurations
+
+## Scripts
+
+- `npm run dev:student` - Start student app in development mode
+- `npm run dev:teacher` - Start teacher app in development mode  
+- `npm run build:student` - Build student app for production
+- `npm run build:teacher` - Build teacher app for production
+- `npm run build:all` - Build all apps and packages
+- `npm run lint` - Run linting across all workspaces
+- `npm run type-check` - Run TypeScript type checking
+
+## Contributing
+
+1. Each app maintains its own dependencies in its `package.json`
+2. Shared code should be placed in appropriate packages
+3. Use workspace references (`@sh4re/*`) for internal dependencies
+4. Follow the existing code structure and conventions

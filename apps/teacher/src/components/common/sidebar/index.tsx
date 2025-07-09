@@ -10,11 +10,11 @@ import { Suspense } from "react";
 import SideBarAccount from "./account";
 
 const sidebarItems = [
-  { icon: HomeIcon, text: "홈", key: "/" },
-  { icon: AnnouncementIcon, text: "공지사항", key: "/announcement" },
-  { icon: CodeIcon, text: "코드", key: "/code" },
-  { icon: TaskIcon, text: "과제 목록", key: "/assignment" },
-  { icon: HandoutsIcon, text: "수업 자료", key: "/handouts" },
+  { icon: HomeIcon, text: "대시보드", key: "/" },
+  { icon: AnnouncementIcon, text: "공지사항 관리", key: "/announcement" },
+  { icon: CodeIcon, text: "학생 코드 검토", key: "/code" },
+  { icon: TaskIcon, text: "과제 관리", key: "/assignment" },
+  { icon: HandoutsIcon, text: "수업 자료 관리", key: "/handouts" },
   { icon: ProfileIcon, text: "프로필", key: "/profile" },
 ];
 
