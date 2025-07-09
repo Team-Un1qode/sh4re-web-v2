@@ -1,0 +1,26 @@
+{
+  "name": "@sh4re/api",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sh4re/types": "*",
+    "axios": "^1.9.0"
+  },
+  "devDependencies": {
+    "@sh4re/tsconfig": "*",
+    "typescript": "~5.8.3"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@sh4re/utils",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sh4re/types": "*",
+    "react": "^19.1.0",
+    "@tanstack/react-query": "^5.81.5"
+  },
+  "devDependencies": {
+    "@sh4re/tsconfig": "*",
+    "@types/react": "^19.1.2",
+    "typescript": "~5.8.3"
+  }
+}

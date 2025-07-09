@@ -1,41 +1,27 @@
 {
-  "name": "sh4re-web-v2",
+  "name": "sh4re-workspace",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "tools/*"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "tsx eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@tanstack/react-query": "^5.81.5",
-    "axios": "^1.9.0",
-    "highlight.js": "^11.11.1",
-    "lucide-react": "^0.525.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-hook-form": "^7.56.4",
-    "react-router-dom": "^7.6.1",
-    "react-select": "^5.10.1",
-    "styled-components": "^6.1.18",
-    "styled-reset": "^4.5.2",
-    "typescript": "~5.8.3",
-    "zustand": "^5.0.5"
+    "dev:student": "npm run dev --workspace=apps/student",
+    "dev:teacher": "npm run dev --workspace=apps/teacher",
+    "build:student": "npm run build --workspace=apps/student",
+    "build:teacher": "npm run build --workspace=apps/teacher",
+    "build:all": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "type-check": "npm run type-check --workspaces --if-present"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "@vitejs/plugin-react": "^4.4.1",
     "eslint": "^9.25.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
     "tsx": "^4.19.4",
-    "typescript-eslint": "^8.30.1",
-    "vite": "^6.3.5",
-    "vite-plugin-svgr": "^4.3.0"
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.30.1"
   }
 }

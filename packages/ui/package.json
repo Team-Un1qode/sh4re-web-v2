@@ -1,0 +1,36 @@
+{
+  "name": "@sh4re/ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sh4re/types": "*",
+    "@sh4re/theme": "*",
+    "@sh4re/utils": "*",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.1",
+    "react-select": "^5.10.1",
+    "styled-components": "^6.1.18",
+    "styled-reset": "^4.5.2",
+    "lucide-react": "^0.525.0"
+  },
+  "devDependencies": {
+    "@sh4re/tsconfig": "*",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "typescript": "~5.8.3"
+  }
+}
