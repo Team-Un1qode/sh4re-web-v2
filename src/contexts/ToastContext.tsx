@@ -18,10 +18,12 @@ interface ToastProviderProps {
 }
 
 export const ToastProvider: React.FC<ToastProviderProps> = ({ children }) => {
-  const { toasts, closingToasts, setClosingToasts, addToast, removeToast } = useToast();
+  const { toasts, closingToasts, addToast, removeToast } = useToast();
 
   return (
-    <ToastContext.Provider value={{ toasts, closingToasts, setClosingToasts, addToast, removeToast }}>
+    <ToastContext.Provider
+      value={{ toasts, closingToasts, addToast, removeToast }}
+    >
       {children}
     </ToastContext.Provider>
   );
