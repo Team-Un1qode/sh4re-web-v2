@@ -5,7 +5,7 @@ import { useGetMyInfoQuery } from "../../../../queries/user/myInfo.query";
 
 const SideBarAccount = () => {
   const { data } = useGetMyInfoQuery();
-  const user = data?.data?.data?.me;
+  const user = data?.data?.me;
   return (
     <>
       {user && ( // 2항 연산자
