@@ -15,6 +15,8 @@ const dark = {
     buttonBlue: "#0095FF",
     placeholder: "#959595",
     borderGray: "rgba(0, 0, 0, 0.02)",
+    gray: "#E0E0E0",
+    darkgray: "#5C5C5C",
   },
 };
 export default dark;

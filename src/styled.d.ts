@@ -18,6 +18,8 @@ declare module "styled-components" {
       buttonBlue: string;
       placeholder: string;
       borderGray: string;
+      gray: string;
+      darkgray: string;
     };
   }
 }
