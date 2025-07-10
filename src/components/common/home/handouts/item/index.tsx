@@ -4,7 +4,7 @@ import * as S from "./style.ts";
 export interface HandOutsProps {
   period: string;
   title: string;
-  status: "pptx" | "hwp" | "pdf" | "py" | "txt" | "etc";
+  status: "pptx" | "hwp" | "pdf" | "py" | "txt" | "docx" | "etc";
   link: string;
   name: string;
 }
@@ -20,6 +20,8 @@ const getFileIcon = (status: string) =>
     ? "/assets/home/py.svg"
     : status === "txt"
     ? "/assets/home/txt.svg"
+    : status === "docx"
+    ? "/assets/home/docx.svg"
     : "/assets/home/etc.svg";
 
 const HandOutsItem = ({ status, title, period, link, name }: HandOutsProps) => {
@@ -28,7 +30,7 @@ const HandOutsItem = ({ status, title, period, link, name }: HandOutsProps) => {
     <S.Container onClick={() => navigate(link)}>
       <S.TitleWrap>
         <S.Status>
-          <img src={getFileIcon(status)} alt="file icon" />
+          <img src={getFileIcon(status)} alt='file icon' />
         </S.Status>
         {title}
       </S.TitleWrap>

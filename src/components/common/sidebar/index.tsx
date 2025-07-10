@@ -8,6 +8,8 @@ import ProfileIcon from "../../../assets/icons/profile.svg?react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Suspense } from "react";
 import SideBarAccount from "./account";
+import DeferredComponent from "../DeferredComponent";
+import AccountSkeleton from "./account/AccountSkeleton";
 
 const sidebarItems = [
   { icon: HomeIcon, text: "홈", key: "/" },
@@ -22,6 +24,7 @@ const Sidebar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
   const navigate = useNavigate();
+
   return (
     <S.Container>
       <S.Content>
@@ -45,7 +48,9 @@ const Sidebar = () => {
       </S.Content>
       <Suspense
         fallback={
-          <h1 style={{ color: "white", fontSize: "100px" }}>Loading...</h1>
+          <DeferredComponent>
+            <AccountSkeleton />
+          </DeferredComponent>
         }
       >
         <SideBarAccount />
