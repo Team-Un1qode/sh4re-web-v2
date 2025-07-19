@@ -19,7 +19,8 @@
     "react-hook-form": "^7.56.4",
     "react-router-dom": "^7.6.1",
     "react-select": "^5.10.1",
-    "styled-components": "^6.1.18",
+    "react-toastify": "^11.0.5",
+    "styled-components": "^6.1.19",
     "styled-reset": "^4.5.2",
     "typescript": "~5.8.3",
     "zustand": "^5.0.5"

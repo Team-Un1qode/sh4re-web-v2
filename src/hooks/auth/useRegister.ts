@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useToastContext } from "../../contexts/ToastContext";
 import type { RegisterFormInputs } from "../../types/auth/register";
 import sh4reCustomAxios from "../../api/sh4reCustomAxios";
+import { toast } from "react-toastify";
 
 const useRegister = () => {
   const [loading, setLoading] = useState<boolean>(false);
-  const { addToast } = useToastContext();
   const navigate = useNavigate();
 
   const submit = async (data: RegisterFormInputs) => {
@@ -22,11 +21,7 @@ const useRegister = () => {
 
       if (res) {
         navigate("/");
-        addToast({
-          type: "success",
-          message: `${data.username}님 환영합니다!`,
-          duration: 3000,
-        });
+        toast.success("회원가입이 완료되었습니다. 환영합니다!");
       }
     } catch (err: any) {
       if (err.response?.data?.data?.code) {
@@ -60,26 +55,14 @@ const useRegister = () => {
               errorMessage || "회원가입 중 알 수 없는 오류가 발생했습니다.";
         }
 
-        addToast({
-          type: "error",
-          message: toastMessage,
-          duration: 4000,
-        });
+        toast.error(toastMessage);
       } else if (err.request) {
-        addToast({
-          type: "error",
-          message: "서버와 연결할 수 없습니다. 네트워크를 확인해주세요.",
-          duration: 4000,
-        });
+        toast.error("서버와 연결할 수 없습니다. 네트워크를 확인해주세요.");
       } else {
-        addToast({
-          type: "error",
-          message:
-            "회원가입 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.",
-          duration: 4000,
-        });
+        toast.error(
+          "회원가입 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요."
+        );
       }
-
       console.error("회원가입 에러:", err);
     } finally {
       setLoading(false);

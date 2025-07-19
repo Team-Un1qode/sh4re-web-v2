@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useToastContext } from "../../contexts/ToastContext";
 import type { LoginFormInputs } from "../../types/auth/login";
 import sh4reCustomAxios from "../../api/sh4reCustomAxios";
+import { toast } from "react-toastify";
 
 const useLogin = () => {
   const [loading, setLoading] = useState<boolean>(false);
-  const { addToast } = useToastContext();
   const navigate = useNavigate();
 
   const submit = async (data: LoginFormInputs) => {
@@ -24,11 +23,7 @@ const useLogin = () => {
       localStorage.setItem("accessToken", accessToken);
 
       navigate("/");
-      addToast({
-        type: "success",
-        message: `${data.username}님 환영합니다!`,
-        duration: 2500,
-      });
+      toast.success(`${data.username}님 환영합니다!`);
     } catch (err: any) {
       if (err.response?.data?.data?.code) {
         const errorCode = err.response.data.data.code;
@@ -71,23 +66,13 @@ const useLogin = () => {
             toastMessage = errorMessage || "알 수 없는 오류가 발생했습니다.";
         }
 
-        addToast({
-          type: "error",
-          message: toastMessage,
-          duration: 2500,
-        });
+        toast.error(toastMessage);
       } else if (err.request) {
-        addToast({
-          type: "error",
-          message: "서버와 연결할 수 없습니다. 네트워크를 확인해주세요.",
-          duration: 2500,
-        });
+        toast.error("서버와 연결할 수 없습니다. 네트워크를 확인해주세요.");
       } else {
-        addToast({
-          type: "error",
-          message: "로그인 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.",
-          duration: 2500,
-        });
+        toast.error(
+          "로그인 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요."
+        );
       }
 
       console.error("로그인 에러:", err);
