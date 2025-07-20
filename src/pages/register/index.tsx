@@ -155,7 +155,7 @@ const Register = () => {
           })}
         />
       </S.InputBox>
-      <S.RegisterButton type='button' onClick={nextStep}>
+      <S.RegisterButton type='submit' onClick={nextStep}>
         다음
       </S.RegisterButton>
     </S.InputContainer>
